@@ -3,1128 +3,460 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#14203a">
+<title>Stubai × Dresdner Hütte · 山屋週末</title>
+<meta name="description" content="斯圖拜冰川週末手冊 · 2026/07/11–12 · Innsbruck 出發 · 上坡用走、下坡搭纜車 · 2 人一泊二食">
+<meta name="theme-color" content="#0C1922">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" href="./favicon-64.png" sizes="64x64">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="阿爾卑斯手冊">
-<link rel="manifest" href="./manifest.webmanifest">
-<link rel="apple-touch-icon" href="./icon-192.png">
-<title>阿爾卑斯湖光山色 · 21日手冊</title>
+<meta name="apple-mobile-web-app-title" content="Stubai">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#14203a; --navy-2:#1b2c4d; --navy-3:#233860;
-    --ink:#1a2338; --paper:#f4f1e9; --paper-2:#ece7db;
-    --card:#ffffff; --line:#dcd6c8; --line-soft:#e7e2d5;
-    --gold:#cf9a3d; --gold-soft:#e7c988; --gold-deep:#a9781f;
-    --muted:#6d6857; --muted-2:#8a8676;
-    --r-munich:#2b4670; --r-salz:#2f6b5b; --r-zell:#2e4f86;
-    --r-inns:#b07d2a; --r-dolo:#3a6b4a; --r-verona:#b45f3a; --r-farewell:#2b4670;
-    --shadow:0 1px 2px rgba(20,32,58,.06),0 8px 24px rgba(20,32,58,.08);
-    --radius:16px; --radius-sm:11px;
-    --serif:"Noto Serif TC",Georgia,"Songti TC",serif;
-    --sans:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;
+    --ink:#0C1922; --ink-2:#12222E; --ink-3:#17293605; --card:#152632;
+    --frost:#E9F1F4; --mist:#8FA5B0; --faint:#5E7482;
+    --glacier:#63B6D6; --glacier-dim:#3E7C93;
+    --alpenglow:#E3A24F; --pine:#5D9B78;
+    --line:#253A47; --line-2:#1D2E3A;
+    --serif:"Fraunces",Georgia,"Songti TC",serif;
+    --grot:"Space Grotesk",ui-monospace,"PingFang TC",sans-serif;
+    --cjk:"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
   }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{margin:0;padding:0}
-  body{font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.6;
-    -webkit-font-smoothing:antialiased; padding-bottom:calc(66px + env(safe-area-inset-bottom))}
-  a{color:inherit}
-  button{font-family:inherit; cursor:pointer; border:none; background:none}
-  .wrap{max-width:640px; margin:0 auto; min-height:100vh; background:var(--paper); position:relative}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--ink);color:var(--frost);
+    font-family:var(--cjk);line-height:1.62;
+    letter-spacing:.01em;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    overflow-x:hidden;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 20px}
+  ::selection{background:var(--glacier);color:var(--ink)}
 
-  .topbar{position:sticky; top:0; z-index:40; display:flex; align-items:center; gap:10px;
-    padding:calc(env(safe-area-inset-top) + 10px) 16px 10px;
-    background:rgba(20,32,58,.92); backdrop-filter:blur(10px); color:#f4f1e9; border-bottom:1px solid rgba(207,154,61,.28)}
-  .topbar .brand{font-family:var(--serif); font-weight:700; font-size:16px; letter-spacing:.5px; flex:1; min-width:0;
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-  .topbar .brand small{display:block; font-family:var(--sans); font-weight:400; font-size:10.5px; letter-spacing:2px; color:var(--gold-soft); text-transform:uppercase}
-  .icon-btn{width:38px; height:38px; border-radius:11px; display:grid; place-items:center; color:#f4f1e9; background:rgba(255,255,255,.08)}
-  .icon-btn:active{background:rgba(255,255,255,.18)}
-  .icon-btn svg{width:20px;height:20px}
+  /* ---------- eyebrow / labels ---------- */
+  .eyebrow{font-family:var(--grot);font-size:11px;font-weight:600;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--glacier);}
+  .num{font-family:var(--grot);font-variant-numeric:tabular-nums;}
 
-  .view{display:none; animation:fade .28s ease}
-  .view.active{display:block}
-  @keyframes fade{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:none}}
-  @media (prefers-reduced-motion:reduce){.view,.view.active{animation:none} *{scroll-behavior:auto!important}}
+  /* ---------- hero ---------- */
+  header.hero{padding:52px 0 26px;position:relative}
+  .hero .kicker{color:var(--faint);letter-spacing:.3em}
+  .hero h1{font-family:var(--serif);font-weight:500;
+    font-size:clamp(34px,10vw,52px);line-height:1.02;margin:16px 0 6px;
+    letter-spacing:-.01em;}
+  .hero h1 .zh{display:block;font-size:clamp(24px,7vw,34px);color:var(--frost);margin-top:4px;letter-spacing:.02em}
+  .hero .dek{color:var(--mist);font-size:15px;max-width:34ch;margin-top:14px}
+  .hero .dates{font-family:var(--grot);font-weight:600;color:var(--alpenglow);
+    letter-spacing:.04em;margin-top:18px;font-size:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .hero .dates .live{display:inline-flex;align-items:center;gap:7px;color:var(--glacier);
+    border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--glacier);
+    box-shadow:0 0 0 0 var(--glacier);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(99,182,214,.5)}70%{box-shadow:0 0 0 7px rgba(99,182,214,0)}100%{box-shadow:0 0 0 0 rgba(99,182,214,0)}}
 
-  .hero{position:relative; background:linear-gradient(180deg,#14203a 0%,#1b2c4d 100%); color:#f4f1e9; padding:26px 20px 30px; overflow:hidden}
-  .hero .peaks{position:absolute; left:0; right:0; bottom:0; height:120px; opacity:.5}
-  .hero .sun{position:absolute; top:22px; right:24px; width:66px; height:66px; border-radius:50%;
-    background:radial-gradient(circle at 40% 40%,#e7c988,#cf9a3d); box-shadow:0 0 40px rgba(207,154,61,.4)}
-  .hero .eyebrow{font-size:10.5px; letter-spacing:3px; color:var(--gold-soft); text-transform:uppercase; position:relative}
-  .hero h1{font-family:var(--serif); font-size:29px; line-height:1.22; margin:12px 0 4px; position:relative; font-weight:700}
-  .hero .h1-en{font-family:var(--serif); font-style:italic; font-size:17px; color:var(--gold-soft); position:relative; margin-bottom:14px}
-  .hero .meta{position:relative; font-size:12.5px; color:#cdd6e6; letter-spacing:.3px}
-  .chips{display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; position:relative}
-  .chip{font-size:11px; padding:5px 11px; border-radius:999px; background:rgba(255,255,255,.09); border:1px solid rgba(231,201,136,.3); color:#eef2f8}
+  /* ---------- elevation profile (signature) ---------- */
+  .profile{margin:30px 0 8px;position:relative}
+  .profile svg{width:100%;height:auto;display:block;overflow:visible}
+  .profile .cap{display:flex;justify-content:space-between;font-family:var(--grot);
+    font-size:10.5px;color:var(--faint);letter-spacing:.14em;text-transform:uppercase;margin-top:10px}
+  .path-line{fill:none;stroke:var(--glacier);stroke-width:2.4;
+    stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.2s .3s ease forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .path-return{fill:none;stroke:var(--glacier-dim);stroke-width:2;stroke-linecap:round;
+    stroke-dasharray:5 8;opacity:0;animation:appear .8s 1.9s ease forwards}
+  @keyframes appear{to{opacity:.85}}
+  .path-fill{fill:url(#grad);opacity:.14}
+  .node circle{fill:var(--ink);stroke:var(--glacier);stroke-width:2}
+  .node.summit circle{stroke:var(--alpenglow)}
+  .node text{font-family:var(--grot);font-size:9.5px;fill:var(--mist);font-weight:500}
+  .node .alt{fill:var(--frost);font-weight:600}
 
-  .countdown{margin:16px; background:var(--navy); color:#f4f1e9; border-radius:var(--radius); padding:18px 20px; display:flex; align-items:center; gap:16px; box-shadow:var(--shadow)}
-  .countdown .big{font-family:var(--serif); font-size:38px; line-height:1; font-weight:700; color:var(--gold-soft)}
-  .countdown .lbl{font-size:12px; color:#cdd6e6}
-  .countdown .lbl strong{display:block; font-size:14.5px; color:#fff; font-weight:600; margin-bottom:2px}
+  /* ---------- stat strip ---------- */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line-2);border:1px solid var(--line-2);border-radius:14px;
+    overflow:hidden;margin:22px 0 8px}
+  .stats div{background:var(--ink-2);padding:14px 12px}
+  .stats .k{font-family:var(--grot);font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint)}
+  .stats .v{font-family:var(--serif);font-size:19px;margin-top:3px;color:var(--frost)}
+  .stats .v small{font-family:var(--cjk);font-size:12px;color:var(--mist)}
 
-  .contact{margin:0 16px 4px; background:linear-gradient(135deg,#243a5e,#1b2c4d); border:1px solid rgba(231,201,136,.25); border-radius:var(--radius); padding:14px 16px; display:flex; align-items:center; gap:13px; box-shadow:var(--shadow); color:#f4f1e9}
-  .contact .cav{width:42px; height:42px; border-radius:12px; background:var(--gold); color:#1b2c4d; display:grid; place-items:center; font-weight:700; font-family:var(--serif); font-size:17px; flex-shrink:0}
-  .contact .cinfo{flex:1; min-width:0}
-  .contact .crole{font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold-soft)}
-  .contact .cname{font-size:15px; font-weight:700}
-  .contact .cnum{font-size:12.5px; color:#c6d0e2; font-variant-numeric:tabular-nums; margin-top:1px}
-  .contact .cbtns{display:flex; gap:8px}
-  .contact .cbtn{width:40px; height:40px; border-radius:11px; display:grid; place-items:center; background:rgba(255,255,255,.12); color:#fff}
-  .contact .cbtn:active{background:rgba(255,255,255,.25)}
-  .contact .cbtn svg{width:19px;height:19px}
+  /* ---------- day tabs (sticky) ---------- */
+  .tabs{position:sticky;top:0;z-index:20;display:flex;gap:8px;
+    padding:12px 0;margin-top:18px;
+    background:linear-gradient(var(--ink) 72%,transparent);
+    -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+  .tab{flex:1;font-family:var(--grot);font-weight:600;font-size:13px;
+    letter-spacing:.06em;padding:11px 8px;border-radius:11px;border:1px solid var(--line);
+    background:var(--ink-2);color:var(--mist);cursor:pointer;text-align:center;
+    transition:.22s;-webkit-tap-highlight-color:transparent}
+  .tab .d{display:block;font-size:10px;letter-spacing:.2em;color:var(--faint);text-transform:uppercase;margin-bottom:2px}
+  .tab.on{color:var(--ink);background:var(--glacier);border-color:var(--glacier)}
+  .tab.on .d{color:rgba(12,25,34,.6)}
 
-  .sec{padding:6px 16px 4px}
-  .sec-head{display:flex; align-items:baseline; justify-content:space-between; margin:18px 0 12px}
-  .sec-head h2{font-family:var(--serif); font-size:19px; font-weight:700; margin:0; letter-spacing:.3px}
-  .sec-head .en{font-size:10px; letter-spacing:2px; color:var(--muted-2); text-transform:uppercase}
+  /* ---------- section heads ---------- */
+  section{padding:26px 0;border-top:1px solid var(--line-2)}
+  section:first-of-type{border-top:none}
+  .shead{display:flex;align-items:baseline;gap:12px;margin-bottom:20px}
+  .shead .no{font-family:var(--grot);font-size:12px;color:var(--glacier);font-weight:600}
+  .shead h2{font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:.01em}
 
-  .tiles{display:grid; grid-template-columns:repeat(4,1fr); gap:9px; padding:2px 16px 4px}
-  .tile{background:var(--card); border:1px solid var(--line-soft); border-radius:var(--radius-sm); padding:13px 6px 11px; text-align:center; box-shadow:var(--shadow)}
-  .tile:active{transform:scale(.97)}
-  .tile .ic{font-size:21px; line-height:1}
-  .tile .t{font-size:11.5px; margin-top:6px; color:var(--ink); font-weight:600}
+  /* ---------- timeline ---------- */
+  .day{display:none}
+  .day.on{display:block;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .tl{position:relative;margin-left:6px;padding-left:26px}
+  .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;
+    background:linear-gradient(var(--glacier),var(--glacier-dim) 60%,var(--line))}
+  .stop{position:relative;padding:0 0 22px}
+  .stop::before{content:"";position:absolute;left:-25px;top:5px;width:12px;height:12px;
+    border-radius:50%;background:var(--ink);border:2px solid var(--glacier)}
+  .stop.walk::before{border-color:var(--pine);background:var(--ink)}
+  .stop.summit::before{border-color:var(--alpenglow);
+    box-shadow:0 0 0 4px rgba(227,162,79,.14)}
+  .stop.lake::before{background:var(--glacier);border-color:var(--glacier)}
+  .stop .t{font-family:var(--grot);font-weight:600;font-size:13px;color:var(--glacier);
+    font-variant-numeric:tabular-nums;letter-spacing:.03em}
+  .stop.summit .t{color:var(--alpenglow)}
+  .stop h4{font-size:15.5px;font-weight:600;margin:2px 0 3px;letter-spacing:.01em}
+  .stop p{color:var(--mist);font-size:13.5px}
+  .stop .tag{display:inline-block;font-family:var(--grot);font-size:10.5px;
+    letter-spacing:.05em;color:var(--faint);border:1px solid var(--line);
+    border-radius:6px;padding:2px 8px;margin:8px 6px 0 0}
+  .stop .tag.walk{color:var(--pine);border-color:#2f4a3d}
+  .stop .tag.hot{color:var(--alpenglow);border-color:#4a3c26}
+  .stop .nav{display:inline-block;font-family:var(--grot);font-size:11.5px;font-weight:600;
+    letter-spacing:.03em;color:var(--glacier);text-decoration:none;margin-top:9px;
+    border:1px solid var(--line);border-radius:8px;padding:5px 11px;-webkit-tap-highlight-color:transparent}
+  .stop .nav:active{background:var(--ink-2)}
+  .stop.start::before{background:var(--glacier);border-color:var(--glacier)}
 
-  .route{margin:2px 16px 8px; background:var(--card); border:1px solid var(--line-soft); border-radius:var(--radius); padding:6px 4px; box-shadow:var(--shadow)}
-  .route-item{display:flex; align-items:center; gap:12px; padding:11px 14px; position:relative}
-  .route-item:not(:last-child)::after{content:""; position:absolute; left:26px; top:34px; bottom:-6px; width:2px; background:var(--line)}
-  .route-dot{width:22px; height:22px; border-radius:50%; flex-shrink:0; display:grid; place-items:center; color:#fff; font-size:10px; font-weight:700; z-index:1}
-  .route-item .rn{font-size:14px; font-weight:600}
-  .route-item .rd{font-size:11.5px; color:var(--muted)}
+  .note{background:var(--ink-2);border:1px solid var(--line-2);border-left:2px solid var(--alpenglow);
+    border-radius:10px;padding:13px 15px;margin:6px 0 2px;font-size:13px;color:var(--mist)}
+  .note b{color:var(--frost);font-weight:600}
 
-  .seg-label{display:flex; align-items:center; gap:9px; margin:20px 4px 10px; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted-2); font-weight:600}
-  .seg-label::before{content:""; width:14px; height:2px; border-radius:2px; background:var(--seg,#999)}
-  .daycard{display:flex; background:var(--card); border:1px solid var(--line-soft); border-radius:var(--radius); margin-bottom:10px; box-shadow:var(--shadow); overflow:hidden}
-  .daycard:active{transform:scale(.995)}
-  .daycard.today{border-color:var(--gold); box-shadow:0 0 0 2px rgba(207,154,61,.25),var(--shadow)}
-  .daycard .thumb{width:92px; flex-shrink:0; position:relative; background:var(--seg,#334)}
-  .daycard .thumb svg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
-  .daycard .body{padding:12px 14px 13px; flex:1; min-width:0}
-  .daycard .dnum{display:flex; align-items:center; gap:8px; margin-bottom:3px}
-  .daycard .dnum .d{font-family:var(--serif); font-weight:700; font-size:13px; color:var(--seg,#333)}
-  .daycard .dnum .date{font-size:11.5px; color:var(--muted); font-variant-numeric:tabular-nums}
-  .daycard .dnum .tag-today{margin-left:auto; font-size:10px; font-weight:700; color:#fff; background:var(--gold); padding:2px 8px; border-radius:999px; letter-spacing:.5px}
-  .daycard h3{font-size:15px; margin:1px 0 3px; font-weight:700; line-height:1.35}
-  .daycard .leg{font-size:11.5px; color:var(--muted); line-height:1.45}
-  .daycard .leg .mode{color:var(--seg,#555); font-weight:600}
-  .daycard .hotel-row{font-size:11px; color:var(--muted-2); margin-top:5px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  /* ---------- loop diagram ---------- */
+  .loop{background:var(--ink-2);border:1px solid var(--line-2);border-radius:14px;
+    padding:18px 16px;margin:4px 0 18px}
+  .loop .lh{font-family:var(--grot);font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--faint);margin-bottom:12px}
+  .loop ol{list-style:none;display:flex;flex-direction:column;gap:0}
+  .loop li{display:flex;gap:12px;align-items:flex-start;position:relative;padding-bottom:14px}
+  .loop li:not(:last-child)::before{content:"";position:absolute;left:8px;top:20px;bottom:0;width:1.5px;
+    background:var(--line);border-radius:2px}
+  .loop li:not(:last-child).dn::before{background:repeating-linear-gradient(var(--glacier) 0 3px,transparent 3px 7px)}
+  .loop .pt{flex:0 0 17px;height:17px;border-radius:50%;border:2px solid var(--glacier);
+    background:var(--ink);margin-top:1px}
+  .loop li.up .pt{border-color:var(--pine)}
+  .loop li.peak .pt{border-color:var(--glacier);background:var(--glacier)}
+  .loop li.dn .pt{border-color:var(--glacier-dim)}
+  .loop .lb{font-size:13.5px}
+  .loop .lb b{font-weight:600}
+  .loop .lb span{font-family:var(--grot);font-size:11px;color:var(--faint);margin-left:2px}
 
-  /* Day detail */
-  .detail-hero{position:relative; color:#fff; min-height:214px; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; background:#24406b}
-  .dh-illu{position:absolute; inset:0}
-  .dh-illu svg{width:100%; height:100%; display:block}
-  .dh-scrim{position:absolute; inset:0; background:linear-gradient(180deg,rgba(20,32,58,.12) 0%,rgba(20,32,58,.30) 42%,rgba(20,32,58,.85) 100%)}
-  .dh-back{position:absolute; top:calc(env(safe-area-inset-top) + 10px); left:14px; z-index:3;
-    display:inline-flex; align-items:center; gap:5px; font-size:13px; color:#fff; font-weight:600;
-    background:rgba(20,32,58,.5); padding:7px 12px 7px 9px; border-radius:999px; backdrop-filter:blur(4px)}
-  .dh-content{position:relative; z-index:2; padding:18px 18px 18px}
-  .dh-content .eyebrow{font-size:10px; letter-spacing:2.5px; text-transform:uppercase; opacity:.9}
-  .dh-row{display:flex; justify-content:space-between; align-items:flex-end; gap:12px; margin-top:6px}
-  .dh-content h2{font-family:var(--serif); font-size:25px; margin:2px 0 0; font-weight:700; line-height:1.2; text-shadow:0 1px 12px rgba(0,0,0,.35)}
-  .dh-date{text-align:right; flex-shrink:0}
-  .dh-date .dd{font-family:var(--serif); font-size:22px; font-weight:700}
-  .dh-date .wd{font-size:11px; opacity:.9}
-  .dh-sub{font-size:12.5px; opacity:.95; margin-top:9px; line-height:1.5}
+  /* ---------- generic cards / rows ---------- */
+  .rows{border:1px solid var(--line-2);border-radius:14px;overflow:hidden}
+  .row{display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:13px 15px;background:var(--ink-2);border-top:1px solid var(--line-2);font-size:14px}
+  .row:first-child{border-top:none}
+  .row .lab{color:var(--mist)}
+  .row .lab b{color:var(--frost);font-weight:600;display:block;font-size:14.5px}
+  .row .lab small{color:var(--faint);font-size:12px}
+  .row .val{font-family:var(--grot);font-weight:600;font-variant-numeric:tabular-nums;
+    color:var(--frost);white-space:nowrap;font-size:14px}
+  .row .val.hi{color:var(--glacier)}
 
-  .block{background:var(--card); border:1px solid var(--line-soft); border-radius:var(--radius); margin:14px 16px; padding:15px 16px; box-shadow:var(--shadow)}
-  .block-title{display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:.5px; color:var(--seg,#333); margin-bottom:11px; text-transform:uppercase}
-  .block-title .em{font-size:15px}
-  .prose{font-size:13.5px; color:#33384a; line-height:1.72}
-  .prose + .prose{margin-top:10px}
+  .costcard{background:var(--ink-2);border:1px solid var(--line-2);border-radius:14px;padding:4px 0;margin-top:4px}
+  .costcard .r{display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid var(--line-2);align-items:baseline}
+  .costcard .r:first-child{border-top:none}
+  .costcard .r .who{font-size:13.5px;color:var(--mist)}
+  .costcard .r .who b{color:var(--frost);display:block;font-weight:600}
+  .costcard .r .amt{font-family:var(--grot);font-weight:700;font-size:17px;color:var(--frost)}
+  .costcard .r .amt small{display:block;text-align:right;font-size:11px;color:var(--faint);font-weight:500}
+  .costcard .r.best .amt{color:var(--pine)}
 
-  .flow{display:flex; align-items:center; flex-wrap:wrap; gap:6px; font-size:12px}
-  .flow .node{background:var(--paper-2); border:1px solid var(--line); border-radius:8px; padding:4px 9px; font-weight:600; color:var(--ink)}
-  .flow .arr{color:var(--seg,#888); font-weight:700}
-  .note-line{font-size:12px; color:var(--muted); margin-top:11px; line-height:1.55; padding-top:11px; border-top:1px dashed var(--line)}
-  .note-line b{color:var(--ink)}
+  /* ---------- checklist ---------- */
+  .check li{list-style:none;display:flex;gap:12px;align-items:center;padding:11px 2px;
+    border-top:1px solid var(--line-2);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .check li:first-child{border-top:none}
+  .check .box{flex:0 0 20px;height:20px;border-radius:6px;border:1.6px solid var(--faint);
+    display:grid;place-items:center;transition:.18s}
+  .check .box svg{width:12px;height:12px;opacity:0;transform:scale(.5);transition:.18s}
+  .check li.done .box{background:var(--glacier);border-color:var(--glacier)}
+  .check li.done .box svg{opacity:1;transform:none}
+  .check li.done .txt{color:var(--faint);text-decoration:line-through}
+  .check .txt{font-size:14px}
+  .check .txt small{color:var(--faint);font-size:12px;margin-left:6px}
 
-  .spot{padding:14px 0; border-top:1px solid var(--line-soft)}
-  .spot:first-of-type{border-top:none; padding-top:2px}
-  .spot .sh{display:flex; align-items:baseline; gap:9px}
-  .spot .sn{width:22px; height:22px; border-radius:50%; background:var(--seg,#333); color:#fff; font-size:11px; font-weight:700; display:grid; place-items:center; flex-shrink:0}
-  .spot h4{font-size:15.5px; margin:0; font-weight:700}
-  .spot .sen{font-family:var(--serif); font-style:italic; font-size:12.5px; color:var(--muted); font-weight:400}
-  .spot p{font-size:13px; color:#3d4356; margin:8px 0 0; line-height:1.62}
-  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:9px}
-  .tag{font-size:10.5px; padding:3px 9px; border-radius:999px; background:color-mix(in srgb,var(--seg,#888) 10%,#fff); color:var(--seg,#555); border:1px solid color-mix(in srgb,var(--seg,#888) 22%,#fff); font-weight:600}
+  /* ---------- links / buttons ---------- */
+  a.btn{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    background:var(--ink-2);border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;color:var(--frost);text-decoration:none;font-size:14px;
+    margin-top:9px;transition:.2s}
+  a.btn:active{background:var(--card)}
+  a.btn .arrow{color:var(--glacier);font-family:var(--grot)}
+  a.btn small{display:block;color:var(--faint);font-size:12px;margin-top:2px}
 
-  .eat-row{display:flex; gap:12px; padding:10px 0; border-top:1px solid var(--line-soft); align-items:baseline}
-  .eat-row:first-of-type{border-top:none}
-  .eat-row .edot{font-size:15px; flex-shrink:0}
-  .eat-row .en2{font-size:14px; font-weight:700}
-  .eat-row .een{font-family:var(--serif); font-style:italic; font-size:11.5px; color:var(--muted); margin-left:4px}
-  .eat-row .ed{font-size:12px; color:#3d4356; margin-top:2px; line-height:1.5}
+  .de{font-family:var(--grot);color:var(--glacier)}
+  footer{padding:40px 0 60px;text-align:center;color:var(--faint);font-size:12.5px;line-height:1.9}
+  footer .g{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--mist);margin-bottom:10px;display:block}
 
-  .quiz{background:linear-gradient(135deg,#1f3152,#16233f); color:#eef2f8; border-radius:var(--radius); margin:14px 16px; padding:16px 17px; box-shadow:var(--shadow); border:1px solid rgba(231,201,136,.22)}
-  .quiz .qh{display:flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold-soft); margin-bottom:9px}
-  .quiz .qq{font-size:14px; font-weight:600; line-height:1.6}
-  .quiz details{margin-top:12px}
-  .quiz summary{list-style:none; display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; color:#16233f; background:var(--gold-soft); padding:8px 15px; border-radius:999px; cursor:pointer}
-  .quiz summary::-webkit-details-marker{display:none}
-  .quiz details[open] summary{display:none}
-  .quiz .qa{font-size:13px; line-height:1.7; margin-top:2px; color:#dfe6f0; background:rgba(255,255,255,.06); padding:12px 14px; border-radius:11px; border-left:3px solid var(--gold-soft)}
+  /* install toast */
+  #install{position:fixed;left:16px;right:16px;bottom:16px;max-width:608px;margin:0 auto;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;
+    display:none;align-items:center;gap:12px;z-index:50;
+    box-shadow:0 12px 40px rgba(0,0,0,.5)}
+  #install.show{display:flex}
+  #install .ic{flex:0 0 34px}
+  #install .tx{flex:1;font-size:13px}
+  #install .tx b{display:block}
+  #install button{font-family:var(--grot);font-weight:600;font-size:13px;border:none;
+    background:var(--glacier);color:var(--ink);border-radius:9px;padding:9px 13px;cursor:pointer}
+  #install .x{background:none;color:var(--faint);padding:8px}
 
-  .hotel-block{margin:14px 16px; background:linear-gradient(135deg,var(--navy),var(--navy-2)); color:#f4f1e9; border-radius:var(--radius); padding:15px 17px; box-shadow:var(--shadow)}
-  .hotel-block .hb-top{display:flex; align-items:center; gap:13px}
-  .hotel-block .hb-ic{font-size:22px}
-  .hotel-block .hb-city{font-size:11px; color:var(--gold-soft); letter-spacing:1px; text-transform:uppercase}
-  .hotel-block .hb-name{font-size:15px; font-weight:700; margin-top:1px}
-  .hotel-block .hb-area{font-size:12px; color:#c6d0e2; margin-top:9px; line-height:1.5; display:flex; gap:7px}
-  .hotel-block .hb-area::before{content:"📍"; font-size:12px}
-  .hotel-block .hb-note{font-size:11.5px; color:#aab7cf; margin-top:6px}
-  .hotel-block .hb-map{margin-top:12px; display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:700; color:#16233f; background:var(--gold-soft); padding:9px 15px; border-radius:999px}
-  .hotel-block .hb-map svg{width:15px;height:15px}
-
-  .tips-block{margin:14px 16px}
-  .tip{display:flex; gap:10px; font-size:12.5px; color:#3d4356; padding:8px 0; line-height:1.5; align-items:flex-start}
-  .tip::before{content:"›"; color:var(--gold-deep); font-weight:700; font-size:15px; line-height:1.2}
-
-  .daynav{display:flex; gap:10px; margin:6px 16px 24px}
-  .daynav a{flex:1; text-align:center; padding:12px; background:var(--card); border:1px solid var(--line-soft); border-radius:var(--radius-sm); font-size:12.5px; font-weight:600; color:var(--ink); box-shadow:var(--shadow)}
-  .daynav a.disabled{opacity:.35; pointer-events:none}
-  .daynav a span{display:block; font-size:10px; color:var(--muted-2); font-weight:400; margin-bottom:2px}
-
-  .card{background:var(--card); border:1px solid var(--line-soft); border-radius:var(--radius); margin:0 16px 11px; padding:15px 16px; box-shadow:var(--shadow)}
-  .card-h{display:flex; align-items:baseline; gap:9px; margin-bottom:4px}
-  .num-badge{width:24px; height:24px; border-radius:7px; background:var(--navy); color:var(--gold-soft); font-family:var(--serif); font-weight:700; font-size:13px; display:grid; place-items:center; flex-shrink:0}
-  .card h3{font-size:15.5px; margin:0; font-weight:700}
-  .card .sub{font-family:var(--serif); font-style:italic; font-size:12px; color:var(--muted)}
-  .kv{display:flex; gap:14px; flex-wrap:wrap; margin-top:9px; font-size:12px}
-  .kv .k{color:var(--muted-2)}
-  .kv .v{font-weight:600; color:var(--ink)}
-  .card p{font-size:12.5px; color:#3d4356; margin:9px 0 0; line-height:1.6}
-  .alt{font-size:13px; font-weight:700; color:var(--gold-soft); background:var(--navy); border-radius:999px; padding:2px 10px; margin-left:auto; font-variant-numeric:tabular-nums}
-
-  .intro-note{margin:0 16px 14px; font-size:12.5px; color:var(--muted); line-height:1.6; padding:12px 15px; background:var(--paper-2); border-radius:var(--radius-sm); border:1px solid var(--line-soft)}
-  .intro-note b{color:var(--ink)}
-
-  .food-group{margin:0 16px 12px}
-  .food-group .fg-head{display:flex; align-items:center; gap:8px; font-size:13.5px; font-weight:700; margin-bottom:8px; color:var(--ink)}
-  .food-group .fg-em{font-size:18px}
-  .food-item{background:var(--card); border:1px solid var(--line-soft); border-radius:var(--radius-sm); padding:11px 14px; margin-bottom:7px; box-shadow:var(--shadow)}
-  .food-item .fn{font-size:14px; font-weight:700}
-  .food-item .fen{font-family:var(--serif); font-style:italic; font-size:11.5px; color:var(--muted); margin-left:4px}
-  .food-item .fd{font-size:12px; color:#3d4356; margin-top:3px; line-height:1.5}
-
-  .hotel-item{display:flex; background:var(--card); border:1px solid var(--line-soft); border-radius:var(--radius); margin:0 16px 10px; box-shadow:var(--shadow); overflow:hidden}
-  .hotel-item .hi-rail{width:6px; flex-shrink:0; background:var(--seg,#999)}
-  .hotel-item .hi-body{padding:13px 15px; flex:1; min-width:0}
-  .hotel-item .hi-date{font-size:11.5px; color:var(--muted); font-variant-numeric:tabular-nums}
-  .hotel-item .hi-city{font-size:11px; color:var(--seg,#555); font-weight:700; letter-spacing:.5px; text-transform:uppercase; margin-top:2px}
-  .hotel-item .hi-name{font-size:15px; font-weight:700; margin-top:1px}
-  .hotel-item .hi-area{font-size:11.5px; color:var(--muted-2); margin-top:4px; line-height:1.45}
-  .hotel-item .hi-nights{font-size:11px; color:#fff; background:var(--seg,#888); border-radius:999px; padding:2px 9px; font-weight:600; white-space:nowrap}
-  .hotel-item .hi-map{display:inline-flex; align-items:center; gap:5px; margin-top:9px; font-size:12px; font-weight:700; color:var(--gold-deep)}
-  .hotel-item .hi-map svg{width:14px;height:14px}
-
-  .info-card{background:var(--card); border:1px solid var(--line-soft); border-radius:var(--radius-sm); margin:0 16px 8px; box-shadow:var(--shadow); overflow:hidden}
-  .info-card summary{list-style:none; padding:14px 16px; display:flex; align-items:center; gap:11px; font-size:14px; font-weight:600; cursor:pointer}
-  .info-card summary::-webkit-details-marker{display:none}
-  .info-card summary .chev{margin-left:auto; color:var(--muted-2); transition:transform .2s}
-  .info-card[open] summary .chev{transform:rotate(90deg)}
-  .info-card .info-body{padding:0 16px 15px 44px; font-size:12.5px; color:#3d4356; line-height:1.62}
-  .info-card summary .em{font-size:18px}
-
-  .emerg{margin:0 16px 12px; background:linear-gradient(135deg,#7a2020,#a83232); color:#fff; border-radius:var(--radius); padding:16px 18px; display:flex; align-items:center; gap:15px; box-shadow:var(--shadow)}
-  .emerg .num{font-family:var(--serif); font-size:34px; font-weight:700; line-height:1}
-  .emerg .et{font-size:12.5px; opacity:.95}
-  .emerg .et strong{display:block; font-size:14px; margin-bottom:2px}
-
-  .phrases{margin:0 16px 12px}
-  .phrase-row{display:flex; gap:10px; padding:9px 0; border-bottom:1px solid var(--line-soft); font-size:13px; align-items:center}
-  .phrase-row:last-child{border:none}
-  .phrase-row .lang{font-size:10px; font-weight:700; color:#fff; background:var(--navy); border-radius:6px; padding:3px 7px; letter-spacing:.5px; flex-shrink:0}
-  .phrase-row .pz{color:var(--muted); flex-shrink:0}
-  .phrase-row .pf{font-weight:600; margin-left:auto}
-
-  .check-item{display:flex; align-items:center; gap:12px; padding:12px 16px; background:var(--card); border:1px solid var(--line-soft); border-radius:var(--radius-sm); margin:0 16px 7px; box-shadow:var(--shadow); font-size:13.5px}
-  .check-item input{width:20px; height:20px; accent-color:var(--gold-deep); flex-shrink:0}
-  .check-item.done label{text-decoration:line-through; color:var(--muted-2)}
-  .check-item label{flex:1; cursor:pointer}
-
-  .page-title{padding:calc(env(safe-area-inset-top) + 14px) 16px 4px}
-  .page-title .en{font-size:10.5px; letter-spacing:3px; color:var(--gold-deep); text-transform:uppercase; font-weight:600}
-  .page-title h1{font-family:var(--serif); font-size:24px; margin:5px 0 2px; font-weight:700}
-  .page-title p{font-size:12.5px; color:var(--muted); margin:2px 0 0}
-
-  .search-overlay{position:fixed; inset:0; z-index:60; background:var(--paper); display:none; flex-direction:column}
-  .search-overlay.active{display:flex}
-  .search-bar{display:flex; align-items:center; gap:10px; padding:calc(env(safe-area-inset-top) + 12px) 16px 12px; background:var(--navy); border-bottom:1px solid rgba(207,154,61,.3)}
-  .search-bar input{flex:1; background:rgba(255,255,255,.1); border:1px solid rgba(231,201,136,.35); color:#fff; border-radius:11px; padding:11px 14px; font-size:15px; outline:none}
-  .search-bar input::placeholder{color:#9fb0cc}
-  .search-bar .cancel{color:var(--gold-soft); font-size:14px; font-weight:600; padding:6px}
-  .search-results{flex:1; overflow-y:auto; padding:12px 0 30px}
-  .sr-group{font-size:10.5px; letter-spacing:2px; text-transform:uppercase; color:var(--muted-2); font-weight:700; padding:14px 20px 6px}
-  .sr-item{display:block; padding:12px 20px; border-bottom:1px solid var(--line-soft)}
-  .sr-item:active{background:var(--paper-2)}
-  .sr-item .srt{font-size:14.5px; font-weight:600}
-  .sr-item .srd{font-size:12px; color:var(--muted); margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
-  .sr-item mark{background:var(--gold-soft); color:var(--ink); padding:0 1px; border-radius:2px}
-  .sr-empty{text-align:center; color:var(--muted); font-size:13px; padding:60px 30px}
-  .sr-hint{text-align:center; color:var(--muted-2); font-size:12px; padding:40px 30px}
-  .sr-chips{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:18px}
-  .sr-chips button{font-size:12px; padding:7px 13px; border-radius:999px; background:var(--card); border:1px solid var(--line); color:var(--ink)}
-
-  .tabbar{position:fixed; bottom:0; left:0; right:0; z-index:50; display:flex; max-width:640px; margin:0 auto;
-    background:rgba(255,255,255,.96); backdrop-filter:blur(12px); border-top:1px solid var(--line); padding-bottom:env(safe-area-inset-bottom)}
-  .tab{flex:1; padding:8px 2px; display:flex; flex-direction:column; align-items:center; gap:3px; color:var(--muted-2)}
-  .tab svg{width:22px; height:22px}
-  .tab span{font-size:10px; font-weight:600}
-  .tab.active{color:var(--gold-deep)}
-
-  .footer-note{text-align:center; font-size:11px; color:var(--muted-2); padding:24px 30px 14px; line-height:1.6}
-  .updated{font-size:10.5px; color:var(--muted-2); text-align:center; padding:2px 0 20px}
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .path-line{stroke-dashoffset:0}
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header class="topbar">
-    <div class="brand" id="topTitle">阿爾卑斯湖光山色<small>Alpine Lakes · 21日</small></div>
-    <button class="icon-btn" id="searchBtn" aria-label="搜尋">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-    </button>
-  </header>
-  <main id="main"></main>
-  <div class="search-overlay" id="searchOverlay">
-    <div class="search-bar">
-      <input type="search" id="searchInput" placeholder="搜尋地點、歷史、美食、旅館、猜謎…" autocomplete="off">
-      <button class="cancel" id="searchCancel">取消</button>
+
+  <header class="hero">
+    <div class="eyebrow kicker">Stubai Glacier · Innsbruck Base · 2026</div>
+    <h1>Dresdner Hütte<span class="zh">斯圖拜冰川 · 山屋週末</span></h1>
+    <p class="dek">上坡用走、下坡搭纜車。週六登頂 TOP OF TYROL,週日環線走 Egesensee → Mutterberger See,主要陡降全交給纜車。</p>
+    <div class="dates">
+      2026/07/11 SAT – 07/12 SUN
+      <span class="live"><span class="dot"></span>本週末 · 2 人</span>
     </div>
-    <div class="search-results" id="searchResults"></div>
+
+    <!-- elevation profile signature -->
+    <div class="profile">
+      <svg viewBox="0 0 600 200" role="img" aria-label="海拔剖面 1750 到 3165 公尺">
+        <defs>
+          <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#63B6D6"/>
+            <stop offset="1" stop-color="#63B6D6" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- profile: valley 1750 -> Fernau 2308 -> Eisgrat 2900 -> Top 3165 -> back -->
+        <path class="path-fill" d="M20,175 L20,150 L165,120 L310,70 L455,30 L455,175 Z"/>
+        <path class="path-line" d="M20,150 L165,120 L310,70 L455,30"/>
+        <path class="path-return" d="M455,30 L580,150"/>
+        <g class="node"><circle cx="20" cy="150" r="4.5"/><text x="20" y="192" text-anchor="middle">MUTTERBERG</text><text class="alt" x="20" y="140" text-anchor="middle">1750</text></g>
+        <g class="node"><circle cx="165" cy="120" r="4.5"/><text x="165" y="192" text-anchor="middle">FERNAU · 山屋</text><text class="alt" x="165" y="110" text-anchor="middle">2308</text></g>
+        <g class="node"><circle cx="310" cy="70" r="4.5"/><text x="310" y="192" text-anchor="middle">EISGRAT</text><text class="alt" x="310" y="60" text-anchor="middle">2900</text></g>
+        <g class="node summit"><circle cx="455" cy="30" r="5.5"/><text x="455" y="192" text-anchor="middle">TOP OF TYROL</text><text class="alt" x="455" y="20" text-anchor="middle" style="fill:var(--alpenglow)">3165</text></g>
+      </svg>
+      <div class="cap"><span>◀ 上坡步行</span><span>纜車 ⇅</span><span>纜車下山 ▶</span></div>
+    </div>
+
+    <div class="stats">
+      <div><div class="k">天數</div><div class="v">2<small> 天 1 晚</small></div></div>
+      <div><div class="k">最高海拔</div><div class="v">3165<small> m</small></div></div>
+      <div><div class="k">住宿</div><div class="v" style="font-size:15px">Cat A<small> 雙人房</small></div></div>
+    </div>
+  </header>
+
+  <!-- DAY TABS -->
+  <nav class="tabs">
+    <button class="tab on" data-day="1"><span class="d">Sat · 07/11</span>Day 1 · 上山登頂</button>
+    <button class="tab" data-day="2"><span class="d">Sun · 07/12</span>Day 2 · 環線下山</button>
+  </nav>
+
+  <!-- ===================== DAY 1 ===================== -->
+  <div class="day on" id="day1">
+    <section>
+      <div class="shead"><span class="no">01</span><h2>上山 · 上坡健行 · 登頂</h2></div>
+      <div class="note"><b>睡晚版:</b>出發從 08:35 延到 09:35。代價是午後山頂較易起雲,登頂視野可能打折。若上到 Eisgrat 見山頂雲厚,可在 2,900 m 平台等雲隙或當日略過,不勉強強登。</div>
+      <div class="tl" style="margin-top:18px">
+        <div class="stop start"><div class="t">08:45</div><h4>家 · Luigenstraße 24 → Innsbruck Hbf</h4><p>電車 / 巴士約 12–15 分,或步行 ~3 km(東南側)。最遲 09:28 到 Steig B。想更寬鬆可改搭 09:05 → 10:21 的 590。</p><a class="nav" href="https://www.google.com/maps/dir/?api=1&amp;origin=Luigenstra%C3%9Fe+24%2C+6020+Innsbruck&amp;destination=Innsbruck+Hauptbahnhof&amp;travelmode=transit" target="_blank" rel="noopener">開導航 →</a><span class="tag">出門</span></div>
+        <div class="stop"><div class="t">09:35</div><h4>Innsbruck Hbf → Mutterberg</h4><p>Steig B 搭 590a,車程約 75 分,不需轉車。</p><span class="tag">590a</span><span class="tag">75 min</span></div>
+        <div class="stop"><div class="t">10:51</div><h4>抵 Mutterberg 谷站 · 1,750 m</h4><p>購 TOP OF TYROL Ticket(€40.70,涵蓋上山 + 登頂),整裝。</p><span class="tag">購票</span></div>
+        <div class="stop"><div class="t">11:15</div><h4>纜車上 Fernau · 2,308 m</h4><p>Dresdner Hütte 放行李、咖啡、稍作高度適應。山屋就在中站旁,步行約 5 分鐘。</p><span class="tag">纜車</span></div>
+        <div class="stop walk"><div class="t">11:45</div><h4>上坡健行 Fernau → Eisgrat</h4><p>冰河冰磧步道,爬升 600 m,實抓 2–2.5 h。純上坡以向心收縮為主,膝關節負荷低,全區風景最精華的一段。</p><span class="tag walk">唯一步行段</span><span class="tag walk">+600 m</span><span class="tag walk">護膝上坡</span></div>
+        <div class="stop"><div class="t">14:00</div><h4>抵 Eisgrat · 2,900 m 午餐</h4><p>山上餐廳補給,補水、放慢動作以利高度適應。</p><span class="tag">午餐</span></div>
+        <div class="stop summit"><div class="t">14:45</div><h4>纜車直上 TOP OF TYROL · 3,165 m</h4><p>360° 稜線群峰盡收;一旁 Schaufeljoch 小教堂,可於奧地利最高餐廳 Jochdohle(3,150 m)歇腳。動作放慢、注意保暖。</p><span class="tag hot">登頂</span><span class="tag hot">最高餐廳</span></div>
+        <div class="stop"><div class="t">16:00</div><h4>纜車全程下行回 Fernau</h4><p>膝關節負荷最大的陡降段完全交給纜車,不走下坡。</p><span class="tag">免下坡</span></div>
+        <div class="stop lake"><div class="t">傍晚</div><h4>Dresdner Hütte 晚餐 · 夕照 · 過夜</h4><p>三道式晚餐、高山夕照,過夜適應高度,隔日晨間更從容。</p><span class="tag">一泊二食</span></div>
+      </div>
+    </section>
   </div>
-  <nav class="tabbar" id="tabbar"></nav>
+
+  <!-- ===================== DAY 2 ===================== -->
+  <div class="day" id="day2">
+    <section>
+      <div class="shead"><span class="no">02</span><h2>晨間環線 · 纜車下山</h2></div>
+      <div class="note"><b>早退換到趕上 12:00 巴士:</b>7:00 早餐、7:40 退房寄行李、7:50 出發環線,約 11:00 回到山屋。走 Egesensee → Egesen Nieder → Mutterberger See,回程改走 Wilde Grube 碎石車道(Fahrweg)折返,不重爬 Egesen Nieder。558 m 主要陡降仍搭纜車。</div>
+
+      <div class="loop">
+        <div class="lh">環線 · 中等紅級山徑 · ~3–3.25 h · 需 Trittsicherheit</div>
+        <ol>
+          <li class="up"><span class="pt"></span><span class="lb"><b>Dresdner Hütte</b> <span>2,308 m · 起點</span></span></li>
+          <li class="up"><span class="pt"></span><span class="lb">Egesensee <span>2,500 m</span></span></li>
+          <li class="up"><span class="pt"></span><span class="lb">Egesen Nieder <span>2,506 m</span></span></li>
+          <li class="peak"><span class="pt"></span><span class="lb"><b>Mutterberger See</b> <span>2,483 m · 三峰倒映</span></span></li>
+          <li class="dn"><span class="pt"></span><span class="lb">Wilde Grube 碎石車道 <span>折返</span></span></li>
+          <li class="dn"><span class="pt"></span><span class="lb"><b>回 Dresdner Hütte</b> <span>取行李</span></span></li>
+        </ol>
+      </div>
+
+      <div class="tl">
+        <div class="stop"><div class="t">07:00</div><h4>山屋早餐</h4><p>半膳早餐。</p></div>
+        <div class="stop"><div class="t">07:40</div><h4>退房 · 行李寄放山屋</h4><p>房間 09:00 前需騰空;行李寄櫃檯,健行後回程再取。</p><span class="tag">寄行李</span></div>
+        <div class="stop walk"><div class="t">07:50</div><h4>環線出發 → Egesensee</h4><p>經退縮冰河地貌上行,去程約 4.8 km、+481 m 至湖區。</p><span class="tag walk">+481 m</span><span class="tag walk">4.8 km</span></div>
+        <div class="stop lake"><div class="t">09:50</div><h4>Mutterberger See · 2,483 m</h4><p>翡翠色冰斗湖,晴天可見 Wilder Freiger、Wilder Pfaff、Zuckerhütl 三峰倒映。休息、拍照、補水。</p><span class="tag">湖景高點</span></div>
+        <div class="stop"><div class="t">10:15</div><h4>回程 Wilde Grube 碎石車道</h4><p>緩坡車道折返,不重爬 Egesen Nieder,對膝關節友善。</p><span class="tag">緩降</span></div>
+        <div class="stop"><div class="t">11:00</div><h4>回 Dresdner Hütte · 取行李</h4><p>回到山屋、取行李,準備下山。</p></div>
+        <div class="stop"><div class="t">11:15</div><h4>纜車 Fernau → 谷站</h4><p>558 m 主要陡降搭纜車;週日僅需單段票(約 €10.70)。</p><span class="tag">免下坡</span></div>
+        <div class="stop"><div class="t">12:00</div><h4>Mutterberg 搭 590b 返程</h4><p>直達 Innsbruck Hbf,不需轉車。想更寬鬆可改 13:00 → 14:15。</p><span class="tag">590b</span></div>
+        <div class="stop summit"><div class="t">13:15</div><h4>抵 Innsbruck Hbf</h4><p>午後抵達,原路約 15 分回到 Luigenstraße;仍有半天可用。</p></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== TICKETS ===================== -->
+  <section>
+    <div class="shead"><span class="no">·</span><h2>票務 · 纜車與 590</h2></div>
+    <div class="rows">
+      <div class="row"><span class="lab"><b>週六 TOP OF TYROL Ticket</b><small>上山 + 登頂 + 回 Fernau</small></span><span class="val hi">€40.70</span></div>
+      <div class="row"><span class="lab"><b>週日 Fernau → 谷站</b><small>單段纜車</small></span><span class="val">≈ €10.70</span></div>
+      <div class="row"><span class="lab"><b>590 巴士</b><small>KlimaTicket Tirol 有效則免費</small></span><span class="val">2 人來回 ≈ €42</span></div>
+      <div class="row"><span class="lab"><b>纜車押金</b><small>每張可退</small></span><span class="val">€2</span></div>
+    </div>
+    <div class="note" style="border-left-color:var(--glacier)"><b>去程 590 班次(每 30 分一班):</b>09:05→10:21、09:35→10:51、10:05→11:21。<b style="color:var(--frost)">回程:</b>12:00→13:15、13:00→14:15、14:00→15:15。班表以 VVT App 當日為準。</div>
+  </section>
+
+  <!-- ===================== COST ===================== -->
+  <section>
+    <div class="shead"><span class="no">·</span><h2>費用 · 2 人總覽</h2></div>
+    <div class="costcard">
+      <div class="r best"><span class="who"><b>最省</b>AV 會員 + KlimaTicket 有效</span><span class="amt">≈ €299<small>每人 €150</small></span></div>
+      <div class="r"><span class="who"><b>一般</b>非會員 + KlimaTicket 有效</span><span class="amt">≈ €323<small>每人 €162</small></span></div>
+      <div class="r"><span class="who"><b>最高</b>非會員 + 無 KlimaTicket</span><span class="amt">≈ €365<small>每人 €182</small></span></div>
+    </div>
+    <div class="note">含山屋一泊二食(Cat A 雙人房 + A 類加價 + 觀光稅)、纜車、590、週六山上午餐。主要擺動因子:是否 AV 會員(2 人約差 €24)、KlimaTicket 是否有效(約差 €42)。</div>
+  </section>
+
+  <!-- ===================== HUT & TIPS ===================== -->
+  <section>
+    <div class="shead"><span class="no">·</span><h2>山屋 · 當地提醒</h2></div>
+    <div class="rows">
+      <div class="row"><span class="lab"><b>Dresdner Hütte · 2,308 m</b><small>DAV Sektion Dresden · Hofer 家族經營</small></span><span class="val"></span></div>
+      <div class="row"><span class="lab">訂房</span><span class="val" style="white-space:normal;text-align:right">已確認 #6369879 · 一泊二食</span></div>
+      <div class="row"><span class="lab">房型</span><span class="val" style="white-space:normal;text-align:right">Cat A 含床單 · <b style="color:var(--alpenglow)">睡袋內套強制</b> · 不含毛巾</span></div>
+      <div class="row"><span class="lab">取消</span><span class="val" style="white-space:normal;text-align:right">僅收 email 書面 · 7 天前 €10 / 3 天前 €20</span></div>
+      <div class="row"><span class="lab">淋浴</span><span class="val">投幣 €1 / 約 3 分</span></div>
+      <div class="row"><span class="lab">付款</span><span class="val" style="white-space:normal;text-align:right">滿 €10 可刷卡 · 不收 AMEX</span></div>
+      <div class="row"><span class="lab">退房 / 末班上山</span><span class="val">09:00 前 / 16:15</span></div>
+    </div>
+    <div class="note" style="margin-top:14px;border-left-color:var(--alpenglow)"><b>睡袋內套(Hüttenschlafsack):</b>依山屋規約所有床位一律強制,雙人房含床單仍須使用,可自備或現場購買。<b style="color:var(--frost)"> 靜謐時間:</b>22:00–06:00,睡眠房禁鞋、禁明火、全屋禁菸,音訊請用耳機。</div>
+    <div class="note" style="margin-top:10px"><b>高海拔:</b>山頂比平地低 15–20°C,防風保暖層必備,補水、放慢動作。<b style="color:var(--frost)"> 午後天氣:</b>高山午後易起雲雷雨,早上視野最好。<b style="color:var(--frost)"> 德語:</b>Grüß Gott · Danke · Prost。</div>
+    <a class="btn" href="tel:+4352268112"><span>致電山屋 <small>+43 5226 8112</small></span><span class="arrow">→</span></a>
+    <a class="btn" href="tel:140"><span>山難救助 <small>奧地利 140 · 全歐 112</small></span><span class="arrow">→</span></a>
+  </section>
+
+  <!-- ===================== BEFORE YOU GO ===================== -->
+  <section>
+    <div class="shead"><span class="no">·</span><h2>出發前一晚 · 必查</h2></div>
+    <p style="color:var(--mist);font-size:13.5px;margin-bottom:6px">確認 webcam 實際雲幕、步道開放狀態,以及當日巴士票價與班次。</p>
+    <a class="btn" href="https://www.stubaier-gletscher.com/en/stubai-live/weather/" target="_blank" rel="noopener"><span>官方天氣 · Webcam <small>GeoSphere Austria · 2,900 m 預報</small></span><span class="arrow">↗</span></a>
+    <a class="btn" href="https://www.ventusky.com/47;11.12" target="_blank" rel="noopener"><span>Ventusky <small>山區逐時風速與降水</small></span><span class="arrow">↗</span></a>
+    <a class="btn" href="https://www.vvt.at/" target="_blank" rel="noopener"><span>VVT App <small>590 當日班次與票價</small></span><span class="arrow">↗</span></a>
+  </section>
+
+  <!-- ===================== PACKING ===================== -->
+  <section>
+    <div class="shead"><span class="no">·</span><h2>行前清單</h2></div>
+    <ul class="check" id="pack"></ul>
+    <p style="color:var(--faint);font-size:12px;margin-top:12px">勾選狀態存在本機,可離線使用。</p>
+  </section>
+
+  <!-- ===================== HANDBOOK PDF ===================== -->
+  <section>
+    <div class="shead"><span class="no">·</span><h2>完整手冊 · PDF</h2></div>
+    <p style="color:var(--mist);font-size:13.5px;margin-bottom:6px">A4 列印版,7 頁,含封面海拔剖面、Day1/Day2 時刻表、環線圖、票務與費用、山屋資訊。</p>
+    <a class="btn" href="./stubai-handbook.pdf" target="_blank" rel="noopener" download="斯圖拜冰川_山屋週末手冊.pdf"><span>下載手冊 PDF <small>可離線開啟 · 適合列印</small></span><span class="arrow">↓</span></a>
+  </section>
+
+  <footer>
+    <span class="g">Gute Reise · Schöne Berge</span>
+    上坡用走 · 下坡搭纜車 · 平安上下山<br>
+    STUBAI WEEKEND · 2,308 M HUT · 3,165 M SUMMIT · 2026
+  </footer>
+
+</div>
+
+<div id="install">
+  <img class="ic" src="./icon-192.png" width="34" height="34" alt="">
+  <div class="tx"><b>安裝到主畫面</b><span style="color:var(--mist)">離線可用,像 App 一樣開啟</span></div>
+  <button id="doInstall">安裝</button>
+  <button class="x" id="dismiss">✕</button>
 </div>
 
 <script>
-/* =========================================================
-   聯絡 & 行程總覽
-   ========================================================= */
-const CONTACT = { name:"鄧宇翔", role:"領隊 · 緊急聯絡", phone:"+49-15170176267", tel:"+4915170176267" };
-
-const TRIP = {
-  title:"阿爾卑斯湖光山色", titleEn:"Alpine Lakes · Dolomites · Verona",
-  sub:"維洛納 × 因斯布魯克 21日", start:"2026-07-15", end:"2026-08-04", people:6, nights:19,
-  chips:["德國 · 奧地利 · 義大利","5 座纜車登頂 / 最高 3029m","湖泊 × 多洛米蒂世界遺產","樂齡友善 · 全程不自駕（後段可駕）"],
-  facts:[
-    {ic:"🗺",k:"路線軸線",v:"慕尼黑 → 多洛米蒂 → 維洛納，收尾返因斯布魯克"},
-    {ic:"🏔",k:"登頂纜車",v:"5 座 · 最高 3029m 基茨峰冰川"},
-    {ic:"👥",k:"同行人數",v:"6 人 · 樂齡友善"},
-    {ic:"🚆",k:"交通",v:"火車 + 纜車為主 · 末段可自駕"},
-    {ic:"🛂",k:"簽證",v:"申根免簽 · ETIAS 屆時尚未上路"},
-    {ic:"📱",k:"上網",v:"歐盟漫遊 · 三國免額外網卡"},
-  ],
-};
-
-const REGION = {
-  munich:{seg:"var(--r-munich)",name:"München · Bayern"},
-  salz:{seg:"var(--r-salz)",name:"Salzkammergut"},
-  zell:{seg:"var(--r-zell)",name:"Zell am See"},
-  inns:{seg:"var(--r-inns)",name:"Innsbruck · Tirol"},
-  dolo:{seg:"var(--r-dolo)",name:"Val Gardena · Dolomites"},
-  verona:{seg:"var(--r-verona)",name:"Verona · Lago di Garda"},
-  base:{seg:"var(--r-farewell)",name:"Innsbruck Base · Tirol"},
-};
-
-const ROUTE = [
-  {n:1,label:"慕尼黑 · 楚格峰",d:"巴伐利亞 · 鐵+齒軌+纜車",c:"var(--r-munich)"},
-  {n:2,label:"薩爾茨卡默古特湖區",d:"沃夫岡湖 · 羊背山 · 戈紹湖",c:"var(--r-salz)"},
-  {n:3,label:"采爾湖 · 基茨峰冰川",d:"鐵 + 纜車 + 纜索鐵道",c:"var(--r-zell)"},
-  {n:4,label:"因斯布魯克 · 北鏈纜車",d:"提洛首府",c:"var(--r-inns)"},
-  {n:5,label:"Val Gardena · 多洛米蒂",d:"Seceda · Alpe di Siusi 世界遺產",c:"var(--r-dolo)"},
-  {n:6,label:"維洛納 · 加爾達湖",d:"壓軸定點 · Sirmione · Malcesine",c:"var(--r-verona)"},
-];
-
-/* =========================================================
-   原創 SVG 插圖（無智慧財產、離線內嵌、扁平幾何風格）
-   ========================================================= */
-const ILLU = {
-  munich:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="慕尼黑天際線">
-    <rect width="400" height="200" fill="#1b2942"/>
-    <circle cx="332" cy="46" r="25" fill="#cf9a3d" opacity=".9"/>
-    <path d="M0 165 L70 108 L130 150 L215 98 L300 150 L360 116 L400 160 L400 200 L0 200 Z" fill="#263c62" opacity=".7"/>
-    <g fill="#22354f"><rect x="14" y="128" width="34" height="55"/><rect x="54" y="140" width="26" height="43"/><rect x="300" y="132" width="32" height="51"/><rect x="342" y="146" width="26" height="37"/></g>
-    <g fill="#2f4a72"><rect x="150" y="72" width="24" height="111"/><rect x="182" y="72" width="24" height="111"/></g>
-    <path d="M150 72 q12 -24 24 0 Z" fill="#3c6b5e"/><path d="M182 72 q12 -24 24 0 Z" fill="#3c6b5e"/>
-    <circle cx="162" cy="60" r="4.5" fill="#cf9a3d"/><circle cx="194" cy="60" r="4.5" fill="#cf9a3d"/>
-    <rect x="116" y="100" width="18" height="83" fill="#35507a"/><circle cx="125" cy="112" r="6" fill="#e7c988"/><path d="M116 100 l9 -14 9 14 Z" fill="#3c6b5e"/>
-    <rect x="0" y="183" width="400" height="17" fill="#14203a"/></svg>`,
-  zugspitze:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="楚格峰">
-    <rect width="400" height="200" fill="#18294a"/>
-    <circle cx="66" cy="48" r="21" fill="#e7c988" opacity=".85"/>
-    <path d="M0 200 L110 60 L205 200 Z" fill="#33507c"/>
-    <path d="M110 60 L150 118 L70 118 Z" fill="#eef2f8"/>
-    <path d="M150 200 L250 92 L360 200 Z" fill="#2a3f63"/>
-    <path d="M250 92 L285 138 L215 138 Z" fill="#dfe7f2"/>
-    <path d="M300 200 L360 150 L400 200 Z" fill="#24395c"/>
-    <g stroke="#cf9a3d" stroke-width="4" stroke-linecap="round"><line x1="110" y1="60" x2="110" y2="34"/><line x1="99" y1="44" x2="121" y2="44"/></g></svg>`,
-  lakechurch:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="沃夫岡湖">
-    <rect width="400" height="200" fill="#16324a"/>
-    <circle cx="330" cy="44" r="20" fill="#e7c988" opacity=".8"/>
-    <path d="M0 132 L90 70 L170 128 L260 66 L360 130 L400 108 L400 140 L0 140 Z" fill="#2f5f5a" opacity=".8"/>
-    <path d="M0 140 L120 96 L230 136 L340 92 L400 128 L400 140 Z" fill="#3c7169" opacity=".6"/>
-    <g><rect x="60" y="96" width="20" height="44" fill="#eae6da"/><path d="M60 96 q10 -22 20 0 Z" fill="#3c6b5e"/><circle cx="70" cy="86" r="3.5" fill="#cf9a3d"/><rect x="80" y="112" width="34" height="28" fill="#d9d3c4"/><path d="M80 112 l17 -12 17 12 Z" fill="#7a5236"/></g>
-    <rect x="0" y="140" width="400" height="60" fill="#12405a"/>
-    <g opacity=".35"><rect x="60" y="140" width="20" height="30" fill="#eae6da"/><path d="M60 170 q10 20 20 0 Z" fill="#3c6b5e"/></g>
-    <path d="M0 158 H400 M0 176 H400" stroke="#2a6f8a" stroke-width="1.5" opacity=".4"/></svg>`,
-  cogpeak:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="羊背山齒軌">
-    <rect width="400" height="200" fill="#173a4c"/>
-    <circle cx="60" cy="46" r="20" fill="#e7c988" opacity=".82"/>
-    <path d="M0 200 L150 54 L330 200 Z" fill="#2f5f68"/>
-    <path d="M150 54 L192 116 L108 116 Z" fill="#e9eef0"/>
-    <path d="M250 200 L340 118 L400 200 Z" fill="#28505a"/>
-    <path d="M60 200 L150 54" stroke="#12303c" stroke-width="6"/>
-    <g stroke="#cf9a3d" stroke-width="2.4"><line x1="66" y1="192" x2="150" y2="58"/><line x1="80" y1="196" x2="164" y2="62" opacity=".5"/></g>
-    <rect x="96" y="150" width="24" height="15" rx="2" fill="#c94f3a" transform="rotate(-31 108 157)"/>
-    <rect x="0" y="176" width="400" height="24" fill="#123a4a"/></svg>`,
-  laketown:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="采爾湖">
-    <rect width="400" height="200" fill="#1a2f52"/>
-    <circle cx="336" cy="42" r="19" fill="#e7c988" opacity=".8"/>
-    <path d="M0 120 L80 58 L150 116 L240 52 L330 118 L400 96 L400 130 L0 130 Z" fill="#2c4c7a" opacity=".8"/>
-    <path d="M0 130 L110 88 L220 126 L330 84 L400 120 L400 130 Z" fill="#365b8a" opacity=".6"/>
-    <path d="M240 52 L272 98 L208 98 Z" fill="#e6ecf5"/>
-    <rect x="0" y="130" width="400" height="70" fill="#173a6b"/>
-    <g fill="#d9d3c4"><rect x="150" y="118" width="14" height="12"/><rect x="170" y="112" width="16" height="18"/><rect x="192" y="120" width="12" height="10"/></g>
-    <g fill="#7a5236"><path d="M150 118 l7 -7 7 7 Z"/><path d="M170 112 l8 -8 8 8 Z"/></g>
-    <path d="M0 150 H400 M0 170 H400" stroke="#2f5c96" stroke-width="1.5" opacity=".4"/></svg>`,
-  glacier:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="基茨峰冰川">
-    <rect width="400" height="200" fill="#1d3357"/>
-    <circle cx="320" cy="44" r="22" fill="#f0e6cf" opacity=".7"/>
-    <path d="M0 200 L120 46 L250 200 Z" fill="#3a5688"/>
-    <path d="M120 46 L172 128 L68 128 Z" fill="#f2f6fb"/>
-    <path d="M170 200 L290 84 L400 200 Z" fill="#31507e"/>
-    <path d="M290 84 L330 140 L250 140 Z" fill="#eaf1f8"/>
-    <path d="M0 168 Q100 150 200 168 T400 168 L400 200 L0 200 Z" fill="#e6eef7" opacity=".9"/>
-    <path d="M0 180 Q120 166 240 182 T400 180" stroke="#c3d4e8" stroke-width="2" fill="none" opacity=".7"/></svg>`,
-  goldenroof:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="因斯布魯克黃金屋頂">
-    <rect width="400" height="200" fill="#3a2c14"/>
-    <rect width="400" height="200" fill="#1c2a44"/>
-    <path d="M0 150 L90 92 L170 146 L270 88 L360 150 L400 128 L400 200 L0 200 Z" fill="#26304a" opacity=".7"/>
-    <path d="M270 88 L300 128 L240 128 Z" fill="#dfe7f2"/>
-    <g><rect x="150" y="118" width="100" height="60" fill="#e6ded0"/>
-    <rect x="168" y="132" width="16" height="22" fill="#4a6a8f"/><rect x="216" y="132" width="16" height="22" fill="#4a6a8f"/>
-    <path d="M150 118 L200 70 L250 118 Z" fill="#cf9a3d"/>
-    <path d="M150 118 L200 70 L250 118 Z" fill="url(#gg)"/>
-    <defs><linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7c988"/><stop offset="1" stop-color="#a9781f"/></linearGradient></defs>
-    <g fill="#b8892c"><rect x="166" y="98" width="68" height="4"/><rect x="172" y="90" width="56" height="4"/><rect x="178" y="82" width="44" height="4"/></g>
-    <rect x="184" y="150" width="32" height="28" fill="#8a6a3a"/></g></svg>`,
-  dolomite:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="多洛米蒂">
-    <rect width="400" height="200" fill="#1f3a52"/>
-    <circle cx="60" cy="44" r="18" fill="#e7c988" opacity=".75"/>
-    <path d="M0 200 L40 96 L70 130 L110 70 L150 120 L200 60 L250 118 L300 84 L340 130 L400 96 L400 200 Z" fill="#4a6f8a"/>
-    <path d="M110 70 L128 96 L92 96 Z M200 60 L220 92 L180 92 Z M300 84 L316 110 L284 110 Z" fill="#eaf1f6"/>
-    <path d="M0 200 L60 150 L130 178 L210 140 L300 176 L400 148 L400 200 Z" fill="#37634b"/></svg>`,
-  meadow:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="西烏西高地草甸">
-    <rect width="400" height="200" fill="#25436a"/>
-    <circle cx="330" cy="40" r="18" fill="#e7c988" opacity=".8"/>
-    <path d="M0 96 L60 58 L120 92 L200 50 L280 92 L360 56 L400 92 L400 120 L0 120 Z" fill="#6f8ba6" opacity=".7"/>
-    <path d="M200 50 L226 88 L174 88 Z M60 58 L82 90 L38 90 Z" fill="#e9eef4"/>
-    <path d="M0 120 Q120 100 200 118 T400 112 L400 200 L0 200 Z" fill="#4a8a54"/>
-    <path d="M0 150 Q140 132 260 150 T400 146" stroke="#3c7546" stroke-width="3" fill="none" opacity=".6"/>
-    <g fill="#e7c988"><circle cx="80" cy="168" r="3"/><circle cx="140" cy="182" r="3"/><circle cx="220" cy="164" r="3"/><circle cx="300" cy="180" r="3"/></g>
-    <g fill="#f2f6fb"><circle cx="110" cy="176" r="2.5"/><circle cx="260" cy="176" r="2.5"/><circle cx="340" cy="166" r="2.5"/></g></svg>`,
-  arena:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="維洛納圓形劇場">
-    <rect width="400" height="200" fill="#2a1c2e"/>
-    <rect width="400" height="200" fill="#3a2438" opacity=".6"/>
-    <circle cx="200" cy="52" r="30" fill="#e7c988" opacity=".55"/>
-    <ellipse cx="200" cy="200" rx="205" ry="120" fill="#c98a6a" opacity=".18"/>
-    <g fill="#d59a72">
-    <path d="M40 118 h320 v66 h-320 Z" fill="#c88a63"/>
-    <g fill="#8a5638"><rect x="52" y="128" width="18" height="30" rx="9"/><rect x="86" y="128" width="18" height="30" rx="9"/><rect x="120" y="128" width="18" height="30" rx="9"/><rect x="154" y="128" width="18" height="30" rx="9"/><rect x="188" y="128" width="18" height="30" rx="9"/><rect x="222" y="128" width="18" height="30" rx="9"/><rect x="256" y="128" width="18" height="30" rx="9"/><rect x="290" y="128" width="18" height="30" rx="9"/><rect x="324" y="128" width="18" height="30" rx="9"/></g>
-    <path d="M40 108 h320 v12 h-320 Z" fill="#d9a679"/>
-    <path d="M40 162 h320 v22 h-320 Z" fill="#b87a52"/></g></svg>`,
-  castle:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sirmione 水城堡">
-    <rect width="400" height="200" fill="#213f5c"/>
-    <circle cx="60" cy="44" r="19" fill="#e7c988" opacity=".8"/>
-    <path d="M0 120 L100 92 L220 118 L340 90 L400 116 L400 130 L0 130 Z" fill="#4a6f8a" opacity=".5"/>
-    <g fill="#cdb896">
-    <rect x="150" y="96" width="90" height="66"/>
-    <rect x="180" y="60" width="30" height="102"/>
-    <path d="M150 96 h8 v-9 h8 v9 h8 v-9 h8 v9 h8 v-9 h8 v9 h8 v-9 h8 v9 h8 v-9 h8 v9 h6 v-9 h6" fill="none"/>
-    <g><rect x="150" y="88" width="8" height="8"/><rect x="166" y="88" width="8" height="8"/><rect x="182" y="88" width="8" height="8"/><rect x="198" y="88" width="8" height="8"/><rect x="214" y="88" width="8" height="8"/><rect x="230" y="88" width="8" height="8"/><rect x="180" y="52" width="8" height="8"/><rect x="196" y="52" width="8" height="8"/></g>
-    </g>
-    <g fill="#7a5a34"><rect x="188" y="120" width="14" height="42"/><rect x="164" y="118" width="10" height="14"/><rect x="216" y="118" width="10" height="14"/></g>
-    <rect x="0" y="130" width="400" height="70" fill="#1a4e6b"/>
-    <path d="M0 150 H400 M0 172 H400" stroke="#2f6f8f" stroke-width="1.5" opacity=".4"/></svg>`,
-  valley:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="提洛山谷自駕">
-    <rect width="400" height="200" fill="#1c3450"/>
-    <circle cx="320" cy="42" r="19" fill="#e7c988" opacity=".8"/>
-    <path d="M0 200 L90 70 L160 200 Z" fill="#345a7e"/>
-    <path d="M90 70 L120 118 L60 118 Z" fill="#e6edf4"/>
-    <path d="M240 200 L330 88 L400 200 Z" fill="#2e5170"/>
-    <path d="M330 88 L358 130 L302 130 Z" fill="#dde7f0"/>
-    <path d="M120 200 L250 200 L210 130 L160 130 Z" fill="#37634b"/>
-    <path d="M185 200 Q195 160 200 132 Q205 160 215 200 Z" fill="#20364e"/>
-    <path d="M175 200 L200 138 L225 200" stroke="#cf9a3d" stroke-width="2.5" stroke-dasharray="7 7" fill="none"/></svg>`,
-  plane:`<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="返程">
-    <rect width="400" height="200" fill="#14203a"/>
-    <circle cx="316" cy="150" r="30" fill="#cf9a3d" opacity=".35"/>
-    <path d="M0 168 L90 118 L170 160 L260 112 L360 162 L400 140 L400 200 L0 200 Z" fill="#243a5e" opacity=".7"/>
-    <g transform="rotate(-18 190 90)"><path d="M120 92 L250 82 L268 88 L250 96 L150 100 Z" fill="#e7c988"/><path d="M188 84 L212 58 L222 60 L206 86 Z" fill="#cf9a3d"/><path d="M180 96 L200 118 L210 116 L198 94 Z" fill="#cf9a3d"/></g>
-    <path d="M70 120 Q140 96 210 84" stroke="#e7c988" stroke-width="2" stroke-dasharray="3 6" fill="none" opacity=".6"/></svg>`,
-};
-
-/* =========================================================
-   美食（依區域，供地點引用；亦供美食頁）
-   ========================================================= */
-const FOOD = [
-  {id:"bavaria",em:"🥨",group:"巴伐利亞 · 慕尼黑 / 楚格峰",items:[
-    {n:"白香腸",en:"Weißwurst",d:"小牛肉香腸配甜芥末與扭結麵包，傳統上午前享用。"},
-    {n:"烤豬腳",en:"Schweinshaxe",d:"外脆內嫩，配馬鈴薯丸與酸菜。"},
-    {n:"扭結麵包 & 白啤酒",en:"Brezel",d:"啤酒花園必備組合。"},
-  ]},
-  {id:"austria",em:"🧀",group:"奧地利 · 提洛 / 薩爾茨卡默古特",items:[
-    {n:"維也納炸牛排",en:"Wiener Schnitzel",d:"金黃酥脆薄炸牛排配檸檬。"},
-    {n:"起司麵疙瘩",en:"Kasspatzln",d:"起司香濃配炸洋蔥。"},
-    {n:"湖區鮮魚",en:"Reinanke",d:"湖產白魚，香煎或鹽烤。"},
-    {n:"皇帝煎餅",en:"Kaiserschmarrn",d:"撕碎厚煎餅撒糖粉配果醬。"},
-  ]},
-  {id:"southtyrol",em:"🥓",group:"南提洛 · 多洛米蒂（Val Gardena）",items:[
-    {n:"煙燻火腿",en:"Speck",d:"冷燻火腿配黑麥麵包與 Lagrein 紅酒。"},
-    {n:"麵包丸",en:"Canederli",d:"山屋主食，浮於清湯。"},
-    {n:"菠菜起司餃",en:"Schlutzkrapfen",d:"佐融化奶油與帕瑪森。"},
-    {n:"山屋餐",en:"Rifugio",d:"大麥湯、polenta 與蘋果捲。"},
-  ]},
-  {id:"verona",em:"🍷",group:"維洛納 · 加爾達湖（壓軸）",items:[
-    {n:"水煮牛佐 pearà",en:"Bollito con pearà",d:"維洛納經典，麵包胡椒醬。"},
-    {n:"Amarone 紅酒燉飯",en:"Risotto all'Amarone",d:"以 Amarone 紅酒燉煮。"},
-    {n:"加爾達湖鱒魚",en:"Trota del Garda",d:"湖產鱒魚簡單香煎。"},
-    {n:"湖畔 Gelato",en:"Gelato",d:"Sirmione／湖畔義式冰淇淋。"},
-  ]},
-];
-const foodById = id => FOOD.find(f=>f.id===id);
-
-/* =========================================================
-   地點知識庫（歷史／城市介紹／趣味猜謎），史實均經查證
-   ========================================================= */
-const PLACES = {
-  munich:{illu:"munich",food:"bavaria",
-    about:"巴伐利亞邦（Bayern）首府、德國第三大城，坐落於伊薩河（Isar）畔、阿爾卑斯山北緣。融合啤酒文化、皇家宮廷與現代工業，是本次行程進出歐洲的門戶。",
-    history:"城名 München 源自古高地德語「僧侶（Mönche）之地」；1158 年由獅子亨利（Heinrich der Löwe）在僧侶聚落旁設橋徵稅而建城，市徽上手持紅書的「慕尼黑小僧」（Münchner Kindl）即源於此。自 1506 年起長期為維特爾斯巴赫（Wittelsbach）王朝首府；宮廷啤酒屋 Hofbräuhaus 於 1589 年由公爵威廉五世創立為王室釀酒廠。瑪利亞廣場新市政廳的木偶鐘（Rathaus-Glockenspiel）建於 1908 年，以 43 座鐘與 32 尊真人大小木偶，每日重演 1568 年威廉五世婚禮的馬上比武，以及紀念 1517 年鼠疫後製桶匠上街鼓舞人心的「製桶匠之舞」（Schäfflertanz）。",
-    quiz:{q:"慕尼黑市徽上的吉祥物「慕尼黑小僧」（Münchner Kindl），與城市起源有何直接關聯？",a:"城名 München 源自古高地德語「僧侶（Mönche）之地」。建城前此處為僧侶聚落，故市徽以手持紅書的孩童修士為象徵，延續至今。"}},
-
-  zugspitze:{illu:"zugspitze",food:"bavaria",
-    about:"海拔 2962 公尺、德國最高峰，峰頂正是德國（巴伐利亞）與奧地利（提洛）的國界。設 360° 觀景平台、金色十字架與 Zugspitzplatt 冰川區，全程搭齒軌與纜車、無需健行。",
-    history:"楚格峰首登紀錄為 1820 年。1930 年通車的巴伐利亞楚格峰齒軌鐵路（Bayerische Zugspitzbahn）自加米施—帕滕基興（Garmisch-Partenkirchen）經隧道直抵冰川；2017 年啟用的新纜車以單一跨距逾 3 公里、垂直落差近 1945 公尺，創下多項世界紀錄。晴日可一次眺望德、奧、瑞、義四國逾 400 座阿爾卑斯山峰。",
-    quiz:{q:"站在楚格峰頂，你有可能同時「腳跨兩國」。是哪兩個國家？",a:"德國與奧地利。峰頂即兩國國界，一側屬巴伐利亞、另一側屬提洛，登頂纜車系統亦分屬兩國營運。"}},
-
-  wolfgangsee:{illu:"lakechurch",food:"austria",
-    about:"薩爾茨卡默古特（Salzkammergut）湖區的翡翠色高山湖，串起 St. Gilgen 與 St. Wolfgang 等湖畔小鎮，以清澈湖水、朝聖教堂與悠閒步調著稱。我們捨棄人潮洶湧的哈修塔特，改以此為基地。",
-    history:"湖名源自 10 世紀雷根斯堡主教聖沃夫岡（St. Wolfgang），相傳他在此隱修並建立朝聖地。聖沃夫岡朝聖教堂內藏有哥德晚期大師米夏埃爾·帕赫（Michael Pacher）於 1471–1481 年間完成的翼狀祭壇（Pacher-Altar），為中歐木雕彩繪祭壇的巔峰之作。湖畔的「白馬飯店」（Im Weißen Rößl）更因 1930 年同名輕歌劇而聞名國際。",
-    quiz:{q:"哪一齣 1930 年的輕歌劇，讓沃夫岡湖畔的一家旅館舉世聞名？",a:"《白馬亭》（Im Weißen Rößl）。該劇以 St. Wolfgang 湖畔的白馬飯店為背景，使此地成為經典觀光符號。"}},
-
-  schafberg:{illu:"cogpeak",food:"austria",
-    about:"海拔 1783 公尺，突起於沃夫岡湖與月湖之間的觀景山，素有「薩爾茨卡默古特的陽台」美名，可一覽數座湖泊與群峰。同日順遊靜謐的戈紹湖（Gosausee）鏡面倒影。",
-    history:"羊背山齒軌鐵路（Schafbergbahn）於 1893 年通車，是奧地利現存最陡的登山齒軌鐵路之一，至今仍以蒸汽與現代機車混合營運，約 35 分鐘由湖畔爬升至近山頂。戈紹湖則完美倒映達赫斯坦（Dachstein）冰川與群峰，環湖步道約 3 公里、平緩好走，被許多人譽為薩爾茨卡默古特最美的鏡湖。",
-    quiz:{q:"羊背山齒軌鐵路（1893 年通車）在奧地利登山鐵路中，以什麼特性著稱？",a:"最陡。它是奧地利現存最陡的登山齒軌鐵路之一，至今部分仍以蒸汽機車營運，故山頂被稱為「湖區的陽台」。"}},
-
-  zellamsee:{illu:"laketown",food:"austria",
-    about:"三千公尺群峰環抱的高山湖度假鎮，湖水碧綠、鎮容優雅。北倚 Schmittenhöhe 全景台，南接卡普倫（Kaprun）與 Hohe Tauern 國家公園。",
-    history:"采爾湖聚落可追溯至 8 世紀的傳教據點 Cella in Bisonzio，「Zell」即源於「修道小室（cella）」。19 世紀末鐵路開通後發展為阿爾卑斯度假勝地。緊鄰的上陶恩國家公園（Nationalpark Hohe Tauern）成立於 1981 年，是阿爾卑斯山脈面積最大的國家公園，園內矗立奧地利最高峰大鐘山（Großglockner，3798 公尺）。",
-    quiz:{q:"環抱采爾湖的 Hohe Tauern 國家公園，擁有什麼「阿爾卑斯之最」？",a:"它是阿爾卑斯山脈面積最大的國家公園，並涵蓋奧地利最高峰大鐘山（Großglockner，3798 公尺）。"}},
-
-  kitzsteinhorn:{illu:"glacier",food:"austria",
-    about:"海拔 3029 公尺，本行程海拔最高的「免爬登頂」冰川天台，設 Top of Salzburg 觀景台與國家公園探索隧道（National Park Gallery），盛夏仍白雪皚皚。",
-    history:"基茨峰於 1965 年開發為奧地利第一座冰川滑雪場，其纜車與纜索系統使一般遊客得以無需登山即抵達 3000 公尺高的冰河環境。山體屬上陶恩片岩帶，冰川走廊與探索隧道以科普方式解說冰河地形與高山生態；此地四季可滑雪，夏季仍見滑雪客。",
-    quiz:{q:"基茨峰在奧地利滑雪史上締造了什麼「第一」？",a:"它是奧地利第一座冰川滑雪場（1965 年開發），使四季滑雪與 3000 公尺高海拔觀光成為可能。"}},
-
-  innsbruck:{illu:"goldenroof",food:"austria",
-    about:"奧地利提洛邦（Tirol）首府，坐落於茵河（Inn）河谷、北鏈山脈腳下，是罕見「市中心可直達 2000 公尺高山」的阿爾卑斯城市，巴洛克老城與雪峰同框。",
-    history:"城名意為「茵河之橋」（Inn + Brücke），1420 年成為提洛統治中心。老城地標「黃金屋頂」（Goldenes Dachl）於 1500 年完工，由神聖羅馬皇帝馬克西米利安一世為紀念與米蘭公主比安卡·瑪麗亞·斯福爾扎（Bianca Maria Sforza）的婚姻而建，屋頂鋪有 2,657 片鎏金銅瓦。北鏈纜車（Nordkette／Hungerburgbahn）由已故建築大師札哈·哈蒂（Zaha Hadid）設計、2007 年啟用，以流線型站體聞名。因斯布魯克曾於 1964 與 1976 年兩度主辦冬季奧運。",
-    quiz:{q:"因斯布魯克「黃金屋頂」上的金光其實並非黃金。它由什麼材料構成？",a:"2,657 片「鎏金銅瓦」（fire-gilded copper tiles）——以銅為底、表面鍍金，陽光下閃耀如金。1500 年為馬克西米利安一世的婚禮所建。"}},
-
-  valgardena:{illu:"dolomite",food:"southtyrol",
-    about:"多洛米蒂（Dolomites）核心的拉丁語山谷，主鎮奧蒂塞伊（義 Ortisei／德 St. Ulrich／拉丁語 Urtijëi）。以拉丁（Ladin）文化與傳統木雕聞名，是輻射 Seceda 與 Alpe di Siusi 的定點基地。",
-    history:"Val Gardena 是歐洲少數仍通行拉丁語（Ladin，一種雷托—羅曼語）的山谷之一，居民保有獨特語言與習俗；自 17 世紀起發展木雕工藝，聖像與玩偶行銷全歐。多洛米蒂於 2009 年因其獨特的白雲石（dolomite）地質與壯麗地景，列入聯合國教科文組織世界自然遺產。",
-    quiz:{q:"Val Gardena 居民日常使用一種既非義語、也非德語的古老語言，它叫什麼？",a:"拉丁語（Ladin），屬雷托—羅曼語族。奧蒂塞伊在拉丁語中稱 Urtijëi，德語則稱 St. Ulrich。"}},
-
-  seceda:{illu:"dolomite",food:"southtyrol",
-    about:"海拔 2519 公尺的觀景台，正對 Odle／Geisler 群峰如刀刃般劃過天際的鋸齒稜線，是全球攝影師的朝聖地。兩段纜車即抵，招牌觀景點距站僅約 10 分鐘平路。",
-    history:"Seceda 稜線屬多洛米蒂 Puez-Odle 自然公園。其戲劇性的傾斜地層，是白雲石在約 2.5 億年前古地中海（Tethys 海）淺海珊瑚礁沉積、後經板塊抬升與差異侵蝕而成。清晨與黃昏的「高山輝」（Alpenglühen）使石灰岩壁泛起金紅光澤，正是攝影最戲劇的時刻。",
-    quiz:{q:"多洛米蒂那些鋸齒狀的白色岩峰，其岩石在數億年前原本是什麼？",a:"古地中海（Tethys 海）的珊瑚礁與碳酸鹽沉積。白雲石經板塊抬升成山，故高山岩層中可見海洋生物化石。"}},
-
-  alpedisiusi:{illu:"meadow",food:"southtyrol",
-    about:"義 Alpe di Siusi／德 Seiser Alm，約 56 平方公里，是歐洲最大的高山草甸。碧綠草原舒展於 Sassolungo 與 Schlern 群峰腳下，沒有險升步道，只有牛鈴與花海，最適長輩同行。",
-    history:"這片高地自中世紀即為夏季高山放牧（Almwirtschaft）之地，牛鈴與木造牧屋（Almhütte）構成典型的阿爾卑斯文化地景。為保護草甸生態，高地內實施車輛管制，僅纜車與接駁小巴進出。鄰近的 Schlern（Sciliar）山是南提洛的象徵山峰。",
-    quiz:{q:"Alpe di Siusi 保有什麼「歐洲之最」的地理頭銜？",a:"歐洲最大的高山草甸，面積約 56 平方公里。為保護生態，內部僅允許纜車與接駁車進出。"}},
-
-  verona:{illu:"arena",food:"verona",
-    about:"義大利威尼托（Veneto）大區的歷史名城，阿迪傑河（Adige）環抱的粉橘色中世紀古城，整座老城於 2000 年列入世界文化遺產，亦是莎士比亞《羅密歐與茱麗葉》的舞台。",
-    history:"維洛納圓形劇場（Arena di Verona）約建於公元 30 年，比羅馬競技場（約公元 80 年落成）早了約半世紀，原可容納約 3 萬名觀眾，為現存保存最完好的羅馬圓形劇場之一。1117 年地震摧毀其外環，僅存稱為「Ala」的殘牆。自 1913 年首演威爾第《阿依達》以來，每年夏季在此舉辦露天歌劇季。而「茱麗葉故居」（Casa di Giulietta）那著名的陽台，其實是 1936 年增建的觀光造景。",
-    quiz:{q:"維洛納圓形劇場與羅馬競技場，哪一座比較「年長」？",a:"維洛納圓形劇場。它約建於公元 30 年，比約公元 80 年落成的羅馬競技場早了約半世紀，且保存更完整、至今仍舉辦露天歌劇。"}},
-
-  sirmione:{illu:"castle",food:"verona",
-    about:"加爾達湖（Lago di Garda）為義大利最大湖泊。南端細長半島上的古鎮 Sirmione，有水城堡、溫泉與湖畔老街，宛如童話；北端 Malcesine 可搭 360° 旋轉纜車登巴爾多山（Monte Baldo, 1760m）。",
-    history:"Sirmione 半島尖端的「卡圖盧斯石窟」（Grotte di Catullo）實為公元 1 世紀的大型羅馬別墅遺址，因與拉丁詩人卡圖盧斯（Catullus）的關聯而得名。守衛半島入口的史卡利傑城堡（Castello Scaligero）建於 13 世紀，為維洛納望族史卡拉（Della Scala）家族所築，其「燕尾式」城垛與環城護河為義大利罕見的湖上水寨。歌德在《義大利遊記》中盛讚加爾達湖之美。",
-    quiz:{q:"Sirmione 半島尖端的「卡圖盧斯石窟」，其實並不是石窟。它真正的身分是什麼？",a:"一座公元 1 世紀的大型羅馬別墅遺址。因與拉丁詩人卡圖盧斯的關聯而俗稱「石窟」，實為古羅馬濱湖豪宅。"}},
-
-  base:{illu:"valley",food:"austria",
-    about:"回到因斯布魯克定點六晚，以此為基地租車放射狀出遊。四向山谷單趟皆在 2 小時內，兼顧效率與樂齡節奏。",
-    history:"連接因斯布魯克與義大利的布倫納山口（Brenner，約 1370 公尺），是阿爾卑斯主要山口中海拔最低者，自羅馬時代即為跨越阿爾卑斯的主要通道，鐵公路皆循此越嶺。以因斯布魯克為軸，向南、東、北放射，可深入提洛與鄰境的冰川、河谷與德國巴伐利亞。",
-    quiz:{q:"連接因斯布魯克與義大利的布倫納山口，在阿爾卑斯眾多山口中有何特殊地位？",a:"它是阿爾卑斯主要山口中海拔最低者（約 1370 公尺），自羅馬時代即為跨越阿爾卑斯的主要通道，故鐵公路皆循此越嶺。"}},
-
-  south:{illu:"valley",food:"austria",
-    about:"因斯布魯克南邊的「軌道電車之旅」：搭乘施圖拜谷電車（Stubaitalbahn）自市區一路深入南方的施圖拜谷（Stubaital），沿途盡是提洛的高山牧場與河谷聚落，終點 Fulpmes。原訂前往德國 GP（加米施）小鎮，改以此段更從容、樂齡友善的電車行程取代。",
-    history:"施圖拜谷電車（Stubaitalbahn）於 1904 年通車，全程約 18 公里，自因斯布魯克一路爬升進入施圖拜谷，是奧地利歷史悠久、仍在營運的窄軌電氣化城際電車之一。百年來它以緩慢而優雅的節奏，串起河谷城市與冰川山谷。",
-    quiz:{q:"連接因斯布魯克與施圖拜谷、1904 年通車的 Stubaitalbahn，屬於哪一種交通工具？",a:"窄軌電氣化城際電車（interurban tram）。1904 年通車至今仍在營運，以百年車廂緩緩爬升進入南方施圖拜谷著稱。"}},
-
-  east:{illu:"laketown",food:"austria",
-    about:"搭火車至延巴赫（Jenbach），轉乘百年蒸汽齒軌火車 Achenseebahn（車票約 €47.5，10:06 上山、14:30 下山），一路噴著蒸汽爬升至提洛最大湖泊阿亨湖（Achensee）。可於湖畔散步或加搭遊湖船，傍晚自 Jenbach 返回因斯布魯克。",
-    history:"阿亨湖蒸汽齒軌鐵路（Achenseebahn）於 1889 年通車，自延巴赫爬升約 440 公尺抵達阿亨湖，採 Riggenbach 齒軌系統，是歐洲現存最古老、仍以蒸汽動力營運的齒軌鐵路。其機車於 1888–1889 年由維也納 Floridsdorf 廠製造，至今保存原貌運行。阿亨湖為提洛面積最大的湖泊，湖水呈土耳其藍。",
-    quiz:{q:"延巴赫（Jenbach）車站有一項全奧地利獨有的特色，是什麼？",a:"它是全奧地利唯一同時匯集三種不同軌距的車站——ÖBB 標準軌、齊勒谷鐵路與阿亨湖蒸汽齒軌鐵路在此交會。而 Achenseebahn 更是歐洲現存最古老、仍以蒸汽營運的齒軌鐵路（1889 年）。"}},
-
-  north:{illu:"valley",food:"bavaria",
-    about:"搭火車跨境德國巴伐利亞：清晨自 Innsbruck Westbahnhof 出發抵 Mittenwald（米滕瓦爾德），再前往洛伊塔施精神峽谷（Leutascher Geisterklamm und Wasserfallsteig，門票約 €6）——一條沿深切峽谷與瀑布架設的木棧步道；傍晚自 Mittenwald 返回。德奧同屬申根區、跨境無邊檢。",
-    history:"德國小鎮 Mittenwald 自 17 世紀以來以製作小提琴等弦樂器聞名，其製琴傳統由 Matthias Klotz 奠基，鎮上房舍立面繪有精緻的濕壁畫（Lüftlmalerei）。鄰近的洛伊塔施精神峽谷則是一條架於瀑布與深切石壁間的木棧道，以民間「峽谷精靈（Klammgeist）」傳說為主題，是清涼消暑的健行路線。",
-    quiz:{q:"德國小鎮 Mittenwald 自 17 世紀以來，以製作何種樂器聞名？",a:"小提琴等弦樂器。其製琴傳統由 Matthias Klotz 於 17 世紀奠基，至今仍有製琴學校與工坊。"}},
-
-  flex:{illu:"valley",food:"austria",
-    about:"搭火車沿布倫納鐵道南下至聖約多克（Sankt Jodok am Brenner），這裡是施米恩谷（Schmirntal）與瓦爾斯谷（Valsertal）兩條靜謐側谷的門戶，適合展開一段平緩的南邊山谷鐵道健行，遠離人潮、飽覽高山牧場與溪流。",
-    history:"聖約多克位於因斯布魯克南方的布倫納鐵道沿線。這條 1867 年通車的越嶺鐵路，是最早翻越阿爾卑斯主脊的幹線鐵路之一，將提洛與義大利連成一氣；沿線的施米恩谷與瓦爾斯谷保留了近乎原始的高山牧林景觀，是深受在地人喜愛的健行祕境。",
-    quiz:{q:"連接因斯布魯克與義大利、聖約多克所在的布倫納鐵路，在阿爾卑斯鐵道史上有何地位？",a:"它是最早翻越阿爾卑斯主脊的幹線鐵路之一（1867 年通車），使跨越阿爾卑斯的火車運輸成為可能，且未仰賴長大的山頂隧道。"}},
-};
-
-/* =========================================================
-   逐日行程
-   ========================================================= */
-const DAYS = [
-  {n:1,date:"7/15",wd:"三 Wed",region:"munich",place:"munich",title:"慕尼黑進城",sub:"抵達調時差，以最輕鬆的步調認識巴伐利亞首府",
-    leg:{mode:"航班 · 土耳其轉機",from:"台北",to:"慕尼黑",dur:"7/15 上午抵",flow:["台北 TPE","伊斯坦堡 IST","慕尼黑 MUC"],note:"7/14 21:45 桃園起飛，經伊斯坦堡轉機，7/15 上午抵慕尼黑機場；S-Bahn 進市區約 40 分。第一天任務單純：放下行李、慢慢把身體調進歐洲時間。"},
-    spots:[{i:1,name:"瑪利亞廣場老城",en:"Marienplatz & Old Town",desc:"新市政廳木偶鐘每日 11:00、12:00 定時上演；宮廷啤酒屋 Hofbräuhaus 的白香腸與扭結麵包是最道地的暖身，英國花園（Englischer Garten）的草坪與河上衝浪客最適合調整時差。",tags:["S-Bahn 可達","木偶鐘表演","啤酒花園"]}],
-    hotel:0,tips:["S-Bahn 由機場進市區約 40 分，比私人接送便宜許多。","木偶鐘每日 11:00、12:00 上演（3–10 月加演 17:00），可規劃在此時抵達廣場。"]},
-
-  {n:2,date:"7/16",wd:"四 Thu",region:"munich",place:"zugspitze",title:"德國屋脊楚格峰",sub:"齒軌與纜車登上 2962m 德國最高峰，全程搭車、無需健行",
-    leg:{mode:"區域鐵 + 齒軌 + 纜車",from:"慕尼黑",to:"楚格峰 2962m",dur:"單程約 1.5h",flow:["慕尼黑機場","S-Bahn 40 分","中央車站","RB 1h20","Garmisch","齒軌/纜車","楚格峰 2962m"],note:"D2 票券：慕尼黑往返加米施用 Bayern-Ticket 最划算（最多 5 人共用一張，6 人＝1 張 5 人票＋1 張單人，平日 09:00 後生效）；登頂齒軌／纜車另購，套票約 €70。"},
-    spots:[{i:1,name:"楚格峰",en:"Zugspitze · 2962m",desc:"360° 觀景平台、金色十字架與 Zugspitzplatt 冰川區是經典畫面；上山搭齒軌、下山搭纜車，兩種風景各看一次。山頂常比平地低 15–20°C，長輩放慢腳步注意高海拔。",tags:["齒軌+纜車登頂","套票約 €70","7–8 月清晨能見度最佳"]}],
-    hotel:0,tips:["楚格峰午後常起雲，建議搭早班車上山。","山頂全景餐廳可一邊喝啤酒一邊看群峰。"]},
-
-  {n:3,date:"7/17",wd:"五 Fri",region:"salz",place:"wolfgangsee",title:"進薩爾茨卡默古特湖區",sub:"越過高山進入奧地利最詩意的湖區，沃夫岡湖定點",
-    leg:{mode:"EC/RJ + 郵政巴士",from:"慕尼黑",to:"沃夫岡湖",dur:"約 2.5h",flow:["慕尼黑","EC/RJ 1.5h","薩爾斯堡","150 號郵政巴士","沃夫岡湖"],note:"薩爾斯堡僅轉車不過夜；湖區巴士班次較疏，務必先查時刻表並記末班。"},
-    spots:[{i:1,name:"沃夫岡湖",en:"Wolfgangsee",desc:"翡翠色湖水串起 St. Gilgen、St. Wolfgang 等湖畔小鎮，聖沃夫岡的朝聖教堂與彩繪老屋、湖畔咖啡館構成最悠閒的午後。夏日湖水清澈，亦可游泳、租小船。鄰近月湖（Mondsee）是《真善美》婚禮教堂取景地。",tags:["遊湖船 €8–15","朝聖教堂","夏日可游泳"]}],
-    hotel:1,tips:["捨棄人潮洶湧的哈修塔特，改以沃夫岡湖畔小鎮為基地。","山區午後易雷陣雨，帶輕便雨具。"]},
-
-  {n:4,date:"7/18",wd:"六 Sat",region:"salz",place:"schafberg",title:"羊背山齒軌與戈紹湖",sub:"百年齒軌登羊背山俯瞰群湖，戈紹湖看達赫斯坦冰川倒影",
-    leg:{mode:"齒軌 + 當地巴士",from:"沃夫岡湖",to:"湖區一日",dur:"區內短程",flow:["St. Wolfgang","羊背山齒軌","午後巴士","Gosausee 環湖"],note:"D4 湖區一日：St. Wolfgang 站直接上羊背山齒軌（旺季務必上網預約指定班次）；午後搭當地巴士至 Gosausee 站環湖。"},
-    spots:[
-      {i:1,name:"羊背山齒軌",en:"Schafbergbahn · 1783m",desc:"約 35 分鐘攀上山頂，腳下沃夫岡湖、月湖、阿特湖一覽無遺，素有「薩爾茨卡默古特的陽台」美名。可單程搭車、單程健行下山。早班車（約 08:30 起）人少、光線佳。",tags:["來回約 €44","早班車人少","360° 群湖全景"]},
-      {i:2,name:"戈紹湖",en:"Gosausee",desc:"多數人擠在哈修塔特時，懂門路的人來戈紹湖。這面靜謐的高山湖完美倒映達赫斯坦冰川與群峰。環湖步道約 3 公里、平緩好走，每個角度都是明信片，特別適合長輩。上午光線與水面最平靜。",tags:["環湖步道平緩","湖區免費","上午水面如鏡"]}],
-    hotel:1,tips:["羊背山齒軌旺季務必上網預約指定班次。","戈紹湖環湖步道平緩，上午最美。"]},
-
-  {n:5,date:"7/19",wd:"日 Sun",region:"zell",place:"zellamsee",title:"采爾湖 · Schmittenhöhe 全景",sub:"三千公尺群峰環抱的高山湖度假鎮，纜車登近 2000m 全景台",
-    leg:{mode:"IC/RJ",from:"沃夫岡湖區",to:"采爾湖",dur:"約 1.5–2h",flow:["沃夫岡湖區","IC/RJ 1.5–2h","采爾湖","纜車","Schmittenhöhe"],note:"纜車站市區可接駁。住宿客人卡最省：入住合作旅館常免費附贈 Zell-Kaprun 夏季卡（含多項纜車與巴士），訂房時務必詢問櫃台。"},
-    spots:[{i:1,name:"Schmittenhöhe 全景台",en:"~2000m",desc:"環視 Hohe Tauern 國家公園群峰，山頂有平緩全景步道、現代藝術裝置與小教堂。山下的采爾湖環湖步道、遊湖船與湖畔戲水適合傍晚散步。上午上山雲少，傍晚回到湖畔最浪漫。",tags:["來回約 €30","夏季卡常含","環湖步道"]}],
-    hotel:2,tips:["入住合作旅館常免費附贈 Zell-Kaprun 夏季卡，訂房問櫃台。","Schmittenhöhe 上午上山雲少，能見度最佳。"]},
-
-  {n:6,date:"7/20",wd:"一 Mon",region:"zell",place:"kitzsteinhorn",title:"基茨峰冰川天台",sub:"全程海拔最高、也最震撼的 3029m「免爬登頂」，盛夏依舊白雪皚皚",
-    leg:{mode:"巴士 + 纜車 + 纜索",from:"采爾湖",to:"基茨峰 3029m",dur:"巴士約 25 分",flow:["采爾湖","卡普倫","纜車+纜索","基茨峰 3029m"],note:"基茨峰早場上山避雲，出發前查當日山頂能見度。夏季山頂有雪，務必保暖。"},
-    spots:[{i:1,name:"基茨峰",en:"Kitzsteinhorn · 3029m",desc:"Top of Salzburg 觀景台（3029m）是薩爾斯堡邦最高展望點，冰川走廊與國家公園探索隧道近距離解說冰河地形與高山植物。3000m 高海拔動作放慢、多補水保暖，天氣變化快務必帶防風外套。",tags:["來回約 €40","夏季卡常含","盛夏踏雪"]}],
-    hotel:2,tips:["基茨峰早場上山避雲，出發前先查當日山頂能見度。","3000m 高海拔動作放慢、多補水保暖。"]},
-
-  {n:7,date:"7/21",wd:"二 Tue",region:"inns",place:"innsbruck",title:"因斯布魯克 · 北鏈纜車",sub:"提洛首府，把巴洛克老城與雪峰擠進同一個畫面",
-    leg:{mode:"RJ/IC",from:"采爾湖",to:"因斯布魯克",dur:"約 1.5–2h",flow:["采爾湖","RJ/IC 1.5–2h","因斯布魯克","北鏈三段","Hafelekar 2256m"],note:"北鏈纜車起站在老城旁 Congress 站；到 Hafelekar 來回約 €44。線上購票可省排隊；纜車末班較早，先確認時間。"},
-    spots:[
-      {i:1,name:"黃金屋頂與哈布斯堡老城",en:"Goldenes Dachl & Altstadt",desc:"黃金屋頂是老城地標，海倫格街（Herzog-Friedrich-Straße）兩側盡是彩繪立面的哈布斯堡建築。傍晚老城光線最美，咖啡館與小館林立，最適合放慢腳步。近郊另有施華洛世奇水晶世界可選。",tags:["老城徒步","黃金屋頂","傍晚光線最美"]},
-      {i:2,name:"北鏈纜車",en:"Nordkette · 2256m",desc:"三段式纜車從城市直上高山：Hungerburg → Seegrube → Hafelekar。山上俯瞰整座城市與茵河谷，札哈·哈蒂設計的未來感纜車站本身就是看點，是「市區直達阿爾卑斯」的全歐獨家體驗。",tags:["來回約 €44","哈蒂建築","城市 × 雪峰同框"]}],
-    hotel:3,tips:["北鏈纜車末班較早，先確認時間、線上購票可省排隊。","從市中心搭哈蒂設計的纜車，約 25 分鐘就從城市直上 2256m 高山。"]},
-
-  {n:8,date:"7/22",wd:"三 Wed",region:"dolo",place:"valgardena",title:"越布倫納 · 進多洛米蒂",sub:"越布倫納山口，進入聯合國世界遺產白雲石山，以奧蒂塞伊為基地",
-    leg:{mode:"EC + SAD 巴士",from:"因斯布魯克",to:"Ortisei",dur:"約 3.5h",flow:["因斯布魯克","EC 跨 Brenner","波札諾 Bolzano","SAD 巴士","Ortisei"],note:"Val Gardena 沒有火車站，須經波札諾轉 SAD 巴士進谷；入住通常附免費 Val Gardena Mobil 客人卡，涵蓋谷內巴士。"},
-    spots:[{i:1,name:"奧蒂塞伊",en:"Ortisei · Urtijëi",desc:"多洛米蒂山谷小鎮，義語 Ortisei、德語 St. Ulrich、拉丁語 Urtijëi。定點三晚，輻射 Seceda 鋸齒稜線與 Alpe di Siusi 高山草甸兩條招牌路線。午後抵達、安頓，逛逛以木雕聞名的老鎮。",tags:["定點三晚","拉丁文化 · 木雕","客人卡含谷內巴士"]}],
-    hotel:4,tips:["Val Gardena 沒有火車站，須經波札諾轉 SAD 巴士進谷。","纜車旺季建議線上預約時段，早場上山避午後雲與人潮。"]},
-
-  {n:9,date:"7/23",wd:"四 Thu",region:"dolo",place:"seceda",title:"Seceda 鋸齒稜線",sub:"如果多洛米蒂只能挑一個畫面，那就是 Seceda 的鋸齒稜線",
-    leg:{mode:"兩段纜車",from:"Ortisei",to:"Seceda 2519m",dur:"往返半日",flow:["Ortisei","纜車","Furnes","纜車","Seceda 2519m"],note:"兩段纜車 Ortisei → Furnes → Seceda 輕鬆送你到 2519m。招牌觀景點離纜車站僅約 10 分鐘平路，清晨稜線金光最戲劇。"},
-    spots:[{i:1,name:"Seceda",en:"Seceda · 2519m",desc:"眼前是 Odle / Geisler 群峰如刀刃般劃過天際——全球攝影師的朝聖地。清晨的高山輝（Alpenglühen）使石灰岩壁泛起金紅光澤。早場上山可避開人潮與午後雲。",tags:["來回約 €45","早場避人潮","鋸齒稜線"]}],
-    hotel:4,tips:["Seceda 清晨稜線金光最戲劇，早場上山避人潮。","觀景點離纜車站僅約 10 分鐘平路，樂齡友善。"]},
-
-  {n:10,date:"7/24",wd:"五 Fri",region:"dolo",place:"alpedisiusi",title:"Alpe di Siusi 西烏西高地",sub:"歐洲最大的高山草甸，約 56 平方公里的碧綠草原",
-    leg:{mode:"纜車",from:"Ortisei",to:"Alpe di Siusi",dur:"往返半日",flow:["Ortisei","纜車","Alpe di Siusi 高地"],note:"高地內為車輛管制區，靠纜車與接駁小巴進出。可順遊 Val di Funes 看刀鋒山下的聖約翰小教堂。"},
-    spots:[{i:1,name:"Alpe di Siusi 西烏西高地",en:"Seiser Alm",desc:"碧綠草原舒展在 Sassolungo、Schlern 群峰腳下。沒有險升的步道，只有牛鈴與花海——全程最適合放空、也最適合長輩同行的地方。",tags:["纜車來回約 €25","高山牧場小屋","樂齡友善"]}],
-    hotel:5,tips:["高地為車輛管制區，靠纜車與接駁小巴進出。","可順遊 Val di Funes 看刀鋒山下的聖約翰小教堂。"]},
-
-  {n:11,date:"7/25",wd:"六 Sat",region:"verona",place:"verona",title:"維洛納 · 壓軸登場",sub:"整趟旅程收束在最優雅的一段，莎翁之城定點三晚",
-    leg:{mode:"SAD 巴士 + 火車",from:"Ortisei",to:"維洛納",dur:"約 3h",flow:["Ortisei","SAD 巴士","波札諾","火車","維洛納"],note:"午後下山；維洛納老城為 ZTL 車輛管制區，徒步最方便。"},
-    spots:[{i:1,name:"維洛納老城",en:"Verona",desc:"圓形劇場夏季有歌劇季；茱麗葉故居與陽台、百草廣場（Piazza delle Erbe）、阿迪傑河與石橋構成最浪漫的老城散步。傍晚可在圓形劇場賞露天歌劇（夜票需另購）。",tags:["圓形劇場 €12","茱麗葉故居","夏季歌劇季"]}],
-    hotel:6,tips:["維洛納老城為 ZTL 車輛管制區，徒步最方便。","傍晚可在圓形劇場賞露天歌劇，夜票需另購。"]},
-
-  {n:12,date:"7/26",wd:"日 Sun",region:"verona",place:"sirmione",title:"加爾達湖 · Sirmione",sub:"輻射加爾達湖南端的童話水城堡與湖畔小鎮",
-    leg:{mode:"火車 + 巴士",from:"維洛納",to:"Sirmione",dur:"Desenzano 約 20 分 + 巴士",flow:["維洛納","火車 20 分","Desenzano-Sirmione","巴士","Sirmione"],note:"區域火車班次密集、可當日購票。"},
-    spots:[{i:1,name:"Sirmione 與加爾達湖",en:"Sirmione · Lago di Garda",desc:"南端半島古鎮 Sirmione 有史卡利傑水城堡、溫泉、湖畔老街與義式冰淇淋，宛如童話。亦可北上 Malcesine 搭 360° 旋轉纜車登 1760m 的巴爾多山（Monte Baldo），整座加爾達湖在腳下展開。",tags:["水城堡 · 溫泉","旋轉纜車 €30","湖畔 gelato"]}],
-    hotel:6,tips:["區域火車班次密集、可當日購票，無需早鳥。","Malcesine 旋轉纜車旺季排隊長，務必線上預約時段。"]},
-
-  {n:13,date:"7/27",wd:"一 Mon",region:"verona",place:"verona",title:"加爾達湖自由日",sub:"Peschiera / Malcesine 或留維洛納，彈性收尾",
-    leg:{mode:"火車 + 巴士",from:"維洛納",to:"加爾達湖 / 維洛納城",dur:"區內短程",flow:["維洛納","火車 + 巴士","Peschiera / Malcesine / 留城"],note:"區內短程，班次密集，依當日興趣與天候彈性安排。"},
-    spots:[{i:1,name:"維洛納老城 & 湖畔小鎮",en:"Verona & Lakeside",desc:"最後一天可續逛維洛納老城：百草廣場、阿迪傑河石橋與粉橘立面；或北上 Malcesine 登巴爾多山、南訪 Peschiera 湖濱要塞。步調放慢，把莎翁之城與加爾達湖的湖光留到最後。",tags:["彈性安排","湖畔 gelato","老城散步"]}],
-    hotel:6,tips:["午後續往加爾達湖，傍晚可在圓形劇場賞露天歌劇。","壓軸美食別錯過：水煮牛佐 pearà 麵包胡椒醬、湖畔 gelato。"]},
-
-  {n:14,date:"7/28",wd:"二 Tue",region:"base",place:"base",title:"經 Brenner 北返因斯布魯克",sub:"束跨境長途，回到因斯布魯克定點六晚，銜接後段自駕",
-    leg:{mode:"火車 · 經 Brenner",from:"維洛納",to:"因斯布魯克",dur:"約 3.5–4h",flow:["維洛納","火車跨 Brenner 3.5–4h","因斯布魯克"],note:"移動日；午後出發傍晚抵。六人實務：7–9 座車七月需及早預訂，銜接後段放射狀自駕。"},
-    spots:[{i:1,name:"因斯布魯克定點",en:"Innsbruck Base",desc:"定點六晚（Noas Bergisel）不搬行李，租車放射狀一日遊最有效率——南向冰川山谷、東向冰川滑雪、北跨德國巴伐利亞小鎮，單趟皆在 2 小時內。",tags:["定點六晚","放射狀自駕","7–9 座車及早訂"]}],
-    hotel:7,tips:["7–9 座車七月旺季務必及早預訂。","Bergisel 一帶近市區與南向山谷出口，租大車放射狀最有效率。"]},
-
-  {n:15,date:"7/29",wd:"三 Wed",region:"base",place:"south",title:"因斯布魯克南邊軌道電車之旅",sub:"改以施圖拜谷電車（Stubaitalbahn）深入南方山谷，取代原訂 GP 小鎮",
-    leg:{mode:"軌道電車 · Stubaitalbahn",from:"因斯布魯克",to:"施圖拜谷 Fulpmes",dur:"單程約 1h",flow:["因斯布魯克","Stubaitalbahn 電車","施圖拜谷 · Fulpmes"],note:"原訂前往德國 GP（加米施）小鎮，改以更從容、樂齡友善的施圖拜谷電車一日遊取代。"},
-    spots:[{i:1,name:"施圖拜谷電車",en:"Stubaitalbahn",desc:"1904 年通車的百年窄軌電車，自因斯布魯克緩緩爬升進入南方的施圖拜谷（Stubaital），沿途高山牧場與河谷聚落一覽無遺。終點 Fulpmes 可轉接施圖拜冰川方向，或在谷中小鎮散步用餐。",tags:["百年窄軌電車","樂齡友善","南方山谷"]}],
-    hotel:7,tips:["電車班次固定，出發前確認時刻表。","可於 Fulpmes 續接施圖拜冰川纜車方向（視體力與天候）。"]},
-
-  {n:16,date:"7/30",wd:"四 Thu",region:"base",place:"north",title:"Mittenwald · 洛伊塔施精神峽谷",sub:"火車跨境德國，走訪製琴小鎮與瀑布木棧峽谷步道（已購票）",
-    leg:{mode:"火車 · 已購票",from:"Innsbruck Westbf.",to:"Mittenwald",dur:"06:42 出發 / 16:25 返",flow:["Innsbruck Westbf. 06:42","Mittenwald","Leutascher Geisterklamm","Mittenwald 16:25","因斯布魯克"],note:"上午 06:42 自 Innsbruck Westbahnhof 出發至 Mittenwald，走洛伊塔施精神峽谷（Leutascher Geisterklamm und Wasserfallsteig，約 €6）；下午 16:25 自 Mittenwald 返回。已購票。"},
-    spots:[{i:1,name:"Mittenwald 與精神峽谷",en:"Mittenwald · Leutascher Geisterklamm",desc:"Mittenwald 是巴伐利亞著名的小提琴製琴小鎮，房舍立面繪有精緻濕壁畫。近郊的洛伊塔施精神峽谷是一條架於瀑布與深切石壁間的木棧步道，以民間「峽谷精靈」傳說為主題，清涼消暑、老少皆宜。",tags:["製琴小鎮","瀑布木棧步道","門票約 €6"]}],
-    hotel:7,tips:["班次已購票，注意 06:42 出發，提早到站。","峽谷步道濕滑，穿防滑鞋、注意腳步。"]},
-
-  {n:17,date:"7/31",wd:"五 Fri",region:"base",place:"east",title:"Achensee 蒸汽齒軌火車",sub:"延巴赫轉百年蒸汽火車登提洛最大湖泊（已購票）",
-    leg:{mode:"火車 + 蒸汽齒軌 · 已購票",from:"Innsbruck Westbf.",to:"Achensee",dur:"07:33 出發 / 16:51 返",flow:["Innsbruck Westbf. 07:33","延巴赫 Jenbach","Achenseebahn 10:06 上山","阿亨湖","14:30 下山","Jenbach 16:51"],note:"上午 07:33 自 Innsbruck Westbahnhof 出發至延巴赫（Jenbach），轉乘蒸汽齒軌火車 Achenseebahn（約 €47.5，10:06 上山、14:30 下山）；下午 16:51 自 Jenbach 返回。已購票。"},
-    spots:[{i:1,name:"阿亨湖蒸汽齒軌火車",en:"Achenseebahn · 1889",desc:"1889 年通車的百年蒸汽齒軌火車，一路噴著蒸汽自延巴赫爬升約 440 公尺，抵達土耳其藍的阿亨湖（Achensee）——提洛面積最大的湖泊。可於湖畔散步或加搭遊湖船。",tags:["歐洲最古老蒸汽齒軌","提洛最大湖泊","約 €47.5"]}],
-    hotel:7,tips:["蒸汽火車熱門、常滿；已購票務必準時。","Jenbach 是全奧地利唯一三種軌距交會的車站，留意月台。"]},
-
-  {n:18,date:"8/1",wd:"六 Sat",region:"base",place:"flex",title:"聖約多克 · 南邊山谷鐵道健行",sub:"沿布倫納鐵道南下 Sankt Jodok，走一段靜謐的側谷健行",
-    leg:{mode:"火車 + 健行",from:"因斯布魯克",to:"Sankt Jodok am Brenner",dur:"單程約 40 分",flow:["因斯布魯克","布倫納鐵道","Sankt Jodok am Brenner","側谷健行"],note:"沿布倫納鐵道南下至聖約多克（Sankt Jodok am Brenner），這裡是施米恩谷（Schmirntal）與瓦爾斯谷（Valsertal）的門戶，適合平緩健行。"},
-    spots:[{i:1,name:"聖約多克南邊山谷",en:"Sankt Jodok am Brenner",desc:"聖約多克位於因斯布魯克南方的布倫納鐵道沿線，是施米恩谷與瓦爾斯谷兩條靜謐側谷的入口。遠離人潮，飽覽高山牧場與溪流，適合以火車串聯的一段平緩鐵道健行。",tags:["側谷祕境","高山牧場","鐵道健行"]}],
-    hotel:7,tips:["山谷健行量力而為，帶足飲水與防曬。","確認回程班次時刻，山區班次較疏。"]},
-
-  {n:19,date:"8/2",wd:"日 Sun",region:"base",place:"innsbruck",illu:"goldenroof",title:"因斯布魯克 · 自由參觀",sub:"最後一日參觀市區，可購因斯布魯克卡或散步老城",
-    leg:{mode:"步行 · Innsbruck Card",from:"因斯布魯克",to:"市區",dur:"—",flow:["因斯布魯克市區","老城 · 黃金屋頂","北鏈纜車（可選）"],note:"最後一日自由參觀。可視行程購買「因斯布魯克卡（Innsbruck Card）」涵蓋多數景點與纜車，或單純散步老城。傍晚整理行李。"},
-    spots:[{i:1,name:"因斯布魯克市區自由參觀",en:"Innsbruck Card / Walk",desc:"重訪黃金屋頂與哈布斯堡老城、或再上北鏈纜車俯瞰茵河谷。因斯布魯克卡（Innsbruck Card）涵蓋北鏈、市區景點與觀光巴士，若安排多個點頗划算；也可單純在老城咖啡館放慢步調。傍晚整理行李，為隔日北返慕尼黑做準備。",tags:["Innsbruck Card","老城散步","從容收尾"]}],
-    hotel:7,tips:["Innsbruck Card 適合一日多點；若只走老城則不需購。","傍晚整理行李，液體與紀念品超過 100ml 須放託運。"]},
-
-  {n:20,date:"8/3",wd:"一 Mon",region:"munich",place:"munich",title:"北返慕尼黑 · 宿近機場",sub:"搭已購票 RJ286 火車回慕尼黑，宿近機場",
-    leg:{mode:"RJ286 火車 · 已購票",from:"因斯布魯克",to:"慕尼黑",dur:"10:42 → 12:35",flow:["因斯布魯克 10:42 · 第7月台","RJ286 · 265 車廂","慕尼黑 12:35"],note:"搭 10:42（第 7 月台）RJ286 車次、265 車廂，座位 71 / 72 / 73 / 74 / 76（兩位靠窗、三位靠走道），12:35 抵達慕尼黑。已購票。當晚入住 IBIS Styles 機場飯店，方便隔日一早搭機。"},
-    spots:[{i:1,name:"因斯布魯克 → 慕尼黑",en:"Innsbruck → Munich",desc:"上午收拾行李，搭已購票的 RJ286 火車（10:42 第 7 月台、265 車廂）約 2 小時抵達慕尼黑，當晚入住 IBIS Styles 機場飯店。慕尼黑機場 ↔ 市區搭 S-Bahn 約 40 分最划算。",tags:["RJ286 · 已購票","10:42 → 12:35","宿近機場"]}],
-    hotel:8,tips:["座位：265 車廂 71/72/73/74/76（兩窗三走道）。","台灣護照申根免簽、ETIAS 此行尚未上路，惟護照效期務必遠超返程日。"]},
-
-  {n:21,date:"8/4",wd:"二 Tue",region:"munich",place:null,title:"啟程返台 · 轉機很趕",sub:"慕尼黑 10:40 起飛，伊斯坦堡轉機（很趕！動作要快）",
-    leg:{mode:"土耳其航空 · 轉機很趕",from:"慕尼黑",to:"桃園",dur:"MUC 10:40 → IST → TPE 08:05",flow:["慕尼黑 10:40","伊斯坦堡 14:30 抵 / 15:50 轉","桃園 08:05（+1）"],note:"土耳其航空：慕尼黑 10:40 起飛，14:30 抵伊斯坦堡、15:50 再起飛（轉機時間很趕，動作要快！）；隔日 08:05 抵桃園。離境前確認護照、登機證與電子資料齊全；液體與紀念品超過 100ml 須放託運。"},
-    spots:[{i:1,name:"慕尼黑 → 伊斯坦堡 → 桃園",en:"Farewell",desc:"慕尼黑 10:40 起飛，14:30 抵伊斯坦堡、15:50 轉機（約 80 分鐘，很趕，下機後直奔登機門），隔日 08:05 抵桃園。帶著五座纜車、三國湖光與多洛米蒂稜線的金色記憶回家。",tags:["MUC 10:40 起飛","IST 轉機很趕","08:05 抵桃園"]}],
-    hotel:null,illu:"plane",tips:["伊斯坦堡轉機僅約 80 分鐘，下機後立即前往下一登機門。","液體與紀念品超過 100ml 須放託運行李。"]},
-];
-
-const LIFTS = [
-  {n:1,name:"楚格峰",en:"Zugspitze",alt:"2962m",how:"齒軌 + 纜車",price:"套票約 €70",note:"德國最高峰、德奧邊界金色十字架；午後常起雲，搭早班。"},
-  {n:2,name:"羊背山",en:"Schafberg",alt:"1783m",how:"百年齒軌",price:"來回約 €44",note:"「湖區的陽台」，俯瞰沃夫岡湖、月湖；旺季須預約班次。"},
-  {n:3,name:"Schmittenhöhe（采爾湖）",en:"Schmittenhöhe",alt:"~2000m",how:"纜車",price:"來回約 €30",note:"環視 Hohe Tauern 群峰；住合作旅館常附夏季卡。"},
-  {n:4,name:"基茨峰",en:"Kitzsteinhorn",alt:"3029m",how:"纜車 + 纜索鐵道",price:"來回約 €40",note:"全程最高、冰川天台，盛夏踏雪；高海拔放慢、保暖。"},
-  {n:5,name:"北鏈（因斯布魯克）",en:"Nordkette",alt:"2256m",how:"三段式纜車",price:"來回約 €44",note:"市區直達阿爾卑斯、哈蒂建築；纜車末班早，先確認。"},
-];
-const LIFTS_EXTRA = [
-  {name:"Seceda",alt:"2519m",note:"兩段纜車約 €45；鋸齒稜線、攝影朝聖地"},
-  {name:"Alpe di Siusi",alt:"高地",note:"纜車約 €25；歐洲最大高山草甸、樂齡友善"},
-  {name:"Monte Baldo（Malcesine）",alt:"1760m",note:"360° 旋轉纜車約 €30；俯瞰加爾達湖"},
-];
-
-const HOTELS = [
-  {date:"7/15–7/16",city:"München 慕尼黑",name:"1st Creatif Hotel Elephant",nights:"2 晚",region:"munich",area:"慕尼黑市區，近 S-Bahn，可達瑪利亞廣場老城",q:"1st Creatif Hotel Elephant München"},
-  {date:"7/17–7/18",city:"Wolfgangsee 沃夫岡湖",name:"Hotel Weisser Bär",nights:"2 晚",region:"salz",area:"St. Wolfgang 湖畔，步行可達湖濱、碼頭與羊背山齒軌站",q:"Hotel Weisser Bär St. Wolfgang"},
-  {date:"7/19–7/20",city:"Zell am See 采爾湖",name:"das zellersee",nights:"2 晚",region:"zell",area:"采爾湖畔，近纜車接駁，可入住問夏季卡",q:"das zellersee Zell am See"},
-  {date:"7/21",city:"Innsbruck 因斯布魯克",name:"Marktbar Studios",nights:"1 晚",region:"inns",area:"因斯布魯克市中心，步行可達老城與北鏈纜車起站",q:"Marktbar Studios Innsbruck"},
-  {date:"7/22–7/23",city:"Ortisei 奧蒂塞伊",name:"Luxury B&B August",nights:"2 晚",region:"dolo",area:"奧蒂塞伊鎮中心，近纜車站與谷內巴士",q:"Luxury B&B August Ortisei"},
-  {date:"7/24",city:"Ortisei 奧蒂塞伊",name:"Residence Magdalena",nights:"1 晚",region:"dolo",area:"奧蒂塞伊，步行可達鎮中心",q:"Residence Magdalena Ortisei"},
-  {date:"7/25–7/27",city:"Verona 維洛納",name:"Casa Marilla",nights:"3 晚",region:"verona",area:"維洛納，近老城與圓形劇場（ZTL 徒步區）",q:"Casa Marilla Verona"},
-  {date:"7/28–8/2",city:"Innsbruck 因斯布魯克",name:"Noas Bergisel",nights:"6 晚",region:"base",area:"因斯布魯克 Bergisel 一帶，近市區與南向山谷出口，便於自駕",q:"Noas Bergisel Innsbruck"},
-  {date:"8/3",city:"München 慕尼黑",name:"IBIS Styles 機場",nights:"1 晚",region:"munich",area:"慕尼黑機場旁，便於隔日一早搭機",q:"IBIS Styles Munich Airport"},
-];
-
-const RAIL = [
-  {leg:"D3 · 慕尼黑 → 薩爾斯堡 →（巴士）沃夫岡湖",site:"ÖBB 或 DB",type:"Sparschiene 早鳥",note:"提早 2–6 個月開賣，每人固定低價；6 人同訂選相鄰。"},
-  {leg:"D5 · 沃夫岡湖區 → 采爾湖",site:"ÖBB",type:"Sparschiene 早鳥",note:"區域短程可考慮 Einfach-Raus-Ticket（最多 5 人共用）。"},
-  {leg:"D7 · 采爾湖 → 因斯布魯克",site:"ÖBB",type:"Sparschiene 早鳥",note:"RJ/IC 對號，6 人同訂選相鄰。"},
-  {leg:"D8 · 因斯布魯克 → 波札諾",site:"ÖBB（跨 Brenner）",type:"Sparschiene 早鳥",note:"跨境 EC；到波札諾轉 SAD 巴士進 Val Gardena。"},
-  {leg:"D11 · Ortisei → 波札諾 → 維洛納",site:"SAD 巴士 + Trenitalia",type:"當日購票",note:"谷內巴士常含客人卡；義段火車班次密集。"},
-  {leg:"D12–13 · 維洛納 ⇄ 加爾達湖",site:"Trenitalia",type:"當日購票",note:"區域火車頻繁、票價低，無需早鳥。"},
-  {leg:"D14 · 維洛納 → 因斯布魯克",site:"ÖBB（跨 Brenner EC）",type:"早鳥點對點",note:"跨 Brenner 北返約 3.5–4h；EC 段提早買較省。"},
-];
-const RAIL_TIPS = [
-  {t:"跨境長途段最該先搶",d:"越早越便宜，旺季會漲或售完，優先 ÖBB，跨義段用 Trenitalia。"},
-  {t:"纜車／齒軌通票都不含",d:"羊背山、Schmittenhöhe、基茨峰、北鏈、Seceda、Alpe di Siusi、Monte Baldo 全部官網另購、預約時段。"},
-  {t:"住宿客人卡最省",d:"采爾湖／卡普倫合作旅館常免費贈夏季卡；Val Gardena 有纜車聯票，訂房問櫃台。"},
-  {t:"楚格峰用邦票",d:"Bayern-Ticket 第 1 人約 €29、之後每加 1 人約 +€11，最多 5 人共用；6 人買 5 人票＋1 張單人，限區域車、平日 09:00 後生效。登頂另購。"},
-  {t:"Eurail 通票不划算",d:"只含火車、不含纜車與巴士；提早買點對點票約其半價。歐洲居民適用 Interrail，結論相同。"},
-];
-
-const INFO = [
-  {em:"🛂",t:"護照與簽證",d:"台灣護照申根免簽；ETIAS 於 2026 年 7 月此行尚未上路。護照效期務必遠超返程日。"},
-  {em:"🚆",t:"慕尼黑機場 ↔ 市區",d:"搭 S-Bahn 約 40 分，比私人接送便宜許多。"},
-  {em:"🧥",t:"高海拔保暖",d:"楚格峰、基茨峰、Seceda 山頂常比平地低 15–20°C，防風保暖層必備。"},
-  {em:"🎟",t:"纜車預約時段",d:"羊背山、Schmittenhöhe、基茨峰、北鏈、Seceda、Monte Baldo 旺季務必線上預約。"},
-  {em:"🚌",t:"Val Gardena 無火車站",d:"須經波札諾轉 SAD 巴士進谷；入住常附 Val Gardena Mobil 客人卡。"},
-  {em:"🚗",t:"末段自駕（6 晚）",d:"因斯布魯克放射狀自駕，7–9 座車七月須及早預訂。"},
-  {em:"🎫",t:"住宿客人卡",d:"采爾湖／卡普倫合作旅館常免費贈夏季卡，含多項纜車與巴士，訂房問櫃台。"},
-  {em:"🚏",t:"湖區巴士班次疏",d:"薩爾茨卡默古特巴士較疏，務必先查時刻表並記末班。"},
-  {em:"📱",t:"網路漫遊",d:"德、奧、義皆歐盟，台灣若有歐盟方案可享漫遊，或當地購 eSIM。"},
-  {em:"👟",t:"穩固鞋與防曬",d:"稜線步道好走但需穩固鞋；高山與湖畔日照強，帽子與 SPF50 必備。"},
-  {em:"🅿",t:"義大利 ZTL",d:"維洛納、Sirmione 老城為車輛管制區，徒步最方便。"},
-];
-const PHRASES = [
-  {lang:"德",z:"你好",f:"Grüß Gott"},{lang:"德",z:"謝謝",f:"Danke"},{lang:"德",z:"乾杯",f:"Prost"},
-  {lang:"義",z:"你好",f:"Ciao"},{lang:"義",z:"謝謝",f:"Grazie"},{lang:"義",z:"乾杯",f:"Salute"},
-];
-const CHECKLIST = [
-  "護照（效期遠超返程日）","申根旅遊醫療保險","歐盟 eSIM 或漫遊方案","跨境早鳥火車票（已訂截圖）",
-  "纜車預約時段（Seceda/基茨峰等）","7–9 座租車確認單","住宿訂房確認（含客人卡詢問）","防風保暖外套（山頂 -15~20°C）",
-  "穩固健行鞋 · 帽子 · SPF50","歐規轉接頭 · 行動電源","常備藥品 · 長輩慢性病藥","現金歐元（小鎮 / 巴士）",
-];
-
-/* =========================================================
-   工具
-   ========================================================= */
-const $ = s => document.querySelector(s);
-const mainEl = $("#main");
-const today = new Date(); today.setHours(0,0,0,0);
-const startDate = new Date(TRIP.start+"T00:00:00");
-const endDate = new Date(TRIP.end+"T00:00:00");
-const dayMs = 86400000;
-const daysUntil = () => Math.round((startDate-today)/dayMs);
-function tripDayIndex(){ if(today<startDate||today>endDate) return -1; return Math.round((today-startDate)/dayMs); }
-function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-const segVar = region => `style="--seg:${REGION[region].seg}"`;
-const mapsUrl = q => "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
-const dayIllu = d => (d.illu||(d.place&&PLACES[d.place]?PLACES[d.place].illu:null));
-
-let checkState = {};
-try{ checkState = JSON.parse(localStorage.getItem("alps_check")||"{}"); }catch(e){ checkState={}; }
-const saveCheck = () => { try{ localStorage.setItem("alps_check",JSON.stringify(checkState)); }catch(e){} };
-
-/* =========================================================
-   路由 + 分頁
-   ========================================================= */
-const TABS = [
-  {id:"home",label:"首頁",icon:'<path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/>'},
-  {id:"days",label:"逐日行程",icon:'<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>'},
-  {id:"stay",label:"住宿",icon:'<path d="M3 21V7l9-4 9 4v14"/><path d="M9 21v-6h6v6"/>'},
-  {id:"lifts",label:"纜車",icon:'<path d="M3 7h18"/><circle cx="7" cy="7" r="1.5"/><path d="M7 8.5V21m0-6 5-4 5 4M17 8.5V21"/>'},
-  {id:"info",label:"資訊",icon:'<circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/>'},
-];
-function renderTabs(active){
-  $("#tabbar").innerHTML = TABS.map(t=>`<a class="tab ${active===t.id?'active':''}" href="#/${t.id}">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${t.icon}</svg>
-    <span>${t.label}</span></a>`).join("");
-}
-function route(){
-  const h = location.hash.replace(/^#\//,"") || "home";
-  const [page,arg] = h.split("/");
-  window.scrollTo(0,0);
-  if(page==="day"){ renderDay(+arg); renderTabs("days"); }
-  else if(page==="days"){ renderDays(); renderTabs("days"); }
-  else if(page==="stay"){ renderStay(); renderTabs("stay"); }
-  else if(page==="lifts"){ renderLifts(); renderTabs("lifts"); }
-  else if(page==="food"){ renderFood(); renderTabs("info"); }
-  else if(page==="rail"){ renderRail(); renderTabs("info"); }
-  else if(page==="info"){ renderInfo(); renderTabs("info"); }
-  else { renderHome(); renderTabs("home"); }
-}
-window.addEventListener("hashchange",route);
-const shell = inner => `<div class="view active">${inner}</div>`;
-
-/* ---------- 聯絡卡 ---------- */
-function contactCard(){
-  return `<div class="contact">
-    <div class="cav">鄧</div>
-    <div class="cinfo">
-      <div class="crole">${esc(CONTACT.role)}</div>
-      <div class="cname">${esc(CONTACT.name)}</div>
-      <div class="cnum">${esc(CONTACT.phone)}</div>
-    </div>
-    <div class="cbtns">
-      <a class="cbtn" href="tel:${esc(CONTACT.tel)}" aria-label="撥打">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
-      </a>
-      <button class="cbtn" data-copy="${esc(CONTACT.phone)}" aria-label="複製號碼">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-      </button>
-    </div>
-  </div>`;
-}
-function bindCopy(scope){
-  scope.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>{
-    const v=b.dataset.copy;
-    const ok=()=>{const s=b.innerHTML;b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';setTimeout(()=>b.innerHTML=s,1200);};
-    try{ navigator.clipboard.writeText(v).then(ok,ok); }catch(e){ ok(); }
-  }));
-}
-
-/* ---------- 首頁 ---------- */
-function renderHome(){
-  const du = daysUntil(), tdi = tripDayIndex();
-  let cd;
-  if(tdi>=0){ const d=DAYS[tdi];
-    cd=`<div class="countdown"><div class="big">D${d.n}</div><div class="lbl"><strong>旅程進行中 · 今天</strong>${esc(d.date)}（${esc(d.wd)}）· ${esc(d.title)}</div></div>`;
-  } else if(du>0){
-    cd=`<div class="countdown"><div class="big">${du}</div><div class="lbl"><strong>距離出發還有</strong>${TRIP.start} 台北啟程 · 共 21 天 / ${TRIP.nights} 晚</div></div>`;
-  } else {
-    cd=`<div class="countdown"><div class="big">✓</div><div class="lbl"><strong>旅程已圓滿結束</strong>願阿爾卑斯的湖光與雪峰留下金色記憶</div></div>`;
+(function(){
+  // ---- day tabs ----
+  var tabs=document.querySelectorAll('.tab'), days=document.querySelectorAll('.day');
+  function show(n){
+    tabs.forEach(function(t){t.classList.toggle('on',t.dataset.day===n)});
+    days.forEach(function(d){d.classList.toggle('on',d.id==='day'+n)});
+    try{localStorage.setItem('stubai.day',n)}catch(e){}
+    window.scrollTo({top:document.querySelector('.tabs').offsetTop-4,behavior:'smooth'});
   }
-  const routeItems = ROUTE.map(r=>`<div class="route-item"><div class="route-dot" style="background:${r.c}">${r.n}</div><div><div class="rn">${esc(r.label)}</div><div class="rd">${esc(r.d)}</div></div></div>`).join("");
-  const facts = TRIP.facts.map(f=>`<div class="route-item"><div class="route-dot" style="background:var(--navy-2)">${f.ic}</div><div><div class="rn">${esc(f.k)}</div><div class="rd">${esc(f.v)}</div></div></div>`).join("");
-  const inner = `
-  <section class="hero">
-    <div class="sun"></div>
-    <svg class="peaks" viewBox="0 0 640 120" preserveAspectRatio="none"><path d="M0 120 L110 40 L190 90 L300 20 L410 95 L500 55 L640 120 Z" fill="#243a63"/><path d="M0 120 L150 65 L260 100 L380 50 L520 105 L640 78 L640 120 Z" fill="#2c4675" opacity=".7"/></svg>
-    <div class="eyebrow">${esc(TRIP.titleEn)}</div>
-    <h1>${esc(TRIP.title)}</h1>
-    <div class="h1-en">Verona × Innsbruck · ${esc(TRIP.sub)}</div>
-    <div class="meta">7/15（三）– 8/4（二）· 6 人成行 · 全程不自駕（後段可駕）</div>
-    <div class="chips">${TRIP.chips.map(c=>`<span class="chip">${esc(c)}</span>`).join("")}</div>
-  </section>
-  ${cd}
-  ${contactCard()}
-  <div class="tiles">
-    <a class="tile" href="#/days"><div class="ic">🗓</div><div class="t">逐日行程</div></a>
-    <a class="tile" href="#/lifts"><div class="ic">🚠</div><div class="t">五座纜車</div></a>
-    <a class="tile" href="#/food"><div class="ic">🍴</div><div class="t">沿線美食</div></a>
-    <a class="tile" href="#/rail"><div class="ic">🎫</div><div class="t">火車票券</div></a>
-  </div>
-  <div class="sec"><div class="sec-head"><h2>路線軸線</h2><span class="en">Route</span></div></div>
-  <div class="route">${routeItems}</div>
-  <div class="sec"><div class="sec-head"><h2>行程速覽</h2><span class="en">At a glance</span></div></div>
-  <div class="route">${facts}</div>
-  <div class="tiles" style="margin-top:6px">
-    <a class="tile" href="#/stay"><div class="ic">🏨</div><div class="t">住宿一覽</div></a>
-    <a class="tile" href="#/info"><div class="ic">ℹ️</div><div class="t">注意事項</div></a>
-    <a class="tile" href="#/info"><div class="ic">✅</div><div class="t">打包清單</div></a>
-    <a class="tile" href="#/day/1"><div class="ic">▶️</div><div class="t">從第一天</div></a>
-  </div>
-  <div class="footer-note">祝你旅途愉快 · Gute Reise · Buon Viaggio<br>五座纜車的制高點、多洛米蒂的鋸齒稜線，與維洛納夏夜的歌劇</div>
-  <div class="updated">離線可用 · 票價時刻以官網即時資訊為準（ÖBB / DB / Trenitalia）</div>`;
-  mainEl.innerHTML = shell(inner);
-  bindCopy(mainEl);
-  $("#topTitle").innerHTML = `阿爾卑斯湖光山色<small>Alpine Lakes · 21日</small>`;
-}
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.day)})});
+  try{var d=localStorage.getItem('stubai.day'); if(d==='2')show('2');}catch(e){}
 
-/* ---------- 逐日清單 ---------- */
-function renderDays(){
-  const tdi = tripDayIndex();
-  let html = `<div class="page-title"><div class="en">Day by day</div><h1>逐日行程</h1><p>21 天 / 19 晚 · 點任一天看歷史、美食與猜謎</p></div><div style="padding:6px 16px 30px">`;
-  let lastReg=null;
-  DAYS.forEach((d,idx)=>{
-    if(d.region!==lastReg){ html+=`<div class="seg-label" style="--seg:${REGION[d.region].seg}">${esc(REGION[d.region].name)}</div>`; lastReg=d.region; }
-    const isToday=idx===tdi;
-    const il=dayIllu(d);
-    html+=`<a class="daycard ${isToday?'today':''}" href="#/day/${d.n}" ${segVar(d.region)}>
-      <div class="thumb">${il?ILLU[il]:''}</div>
-      <div class="body">
-        <div class="dnum"><span class="d">DAY ${d.n}</span><span class="date">${esc(d.date)}（${esc(d.wd)}）</span>${isToday?'<span class="tag-today">今天</span>':''}</div>
-        <h3>${esc(d.title)}</h3>
-        <div class="leg"><span class="mode">${esc(d.leg.mode)}</span><br>${esc(d.leg.from)} → ${esc(d.leg.to)} · ${esc(d.leg.dur)}</div>
-        ${d.hotel!=null?`<div class="hotel-row">🏨 ${esc(HOTELS[d.hotel].name)}</div>`:'<div class="hotel-row">✈️ 返抵台北</div>'}
-      </div></a>`;
+  // ---- packing checklist ----
+  var items=[
+    ['防風保暖層','山頂低 15–20°C'],['穩固登山鞋','紅級山徑'],['雨具 / 硬殼',''],
+    ['太陽眼鏡 + 防曬','冰河反光強'],['睡袋內套','Hüttenschlafsack 強制'],['毛巾','山屋不提供'],['水 1–1.5 L / 人',''],
+    ['現金 + 卡','不收 AMEX'],['€1 硬幣','淋浴 / 押金'],['行動電源',''],
+    ['KlimaTicket / 車票',''],['手機存 140 / 112','山難救助'],['登頂票 QR / 購票',''],
+  ];
+  var ul=document.getElementById('pack'), saved={};
+  try{saved=JSON.parse(localStorage.getItem('stubai.pack')||'{}')}catch(e){}
+  items.forEach(function(it,i){
+    var li=document.createElement('li');
+    if(saved[i])li.className='done';
+    li.innerHTML='<span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#0C1922" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><span class="txt">'+it[0]+(it[1]?'<small>'+it[1]+'</small>':'')+'</span>';
+    li.addEventListener('click',function(){
+      li.classList.toggle('done');
+      saved[i]=li.classList.contains('done');
+      try{localStorage.setItem('stubai.pack',JSON.stringify(saved))}catch(e){}
+    });
+    ul.appendChild(li);
   });
-  html+=`</div>`;
-  mainEl.innerHTML = shell(html);
-  $("#topTitle").innerHTML = `逐日行程<small>21 天 / 19 晚</small>`;
-}
 
-/* ---------- 單日詳情 ---------- */
-function renderDay(n){
-  const d = DAYS.find(x=>x.n===n);
-  if(!d){ location.hash="#/days"; return; }
-  const c = REGION[d.region].seg;
-  const p = d.place?PLACES[d.place]:null;
-  const il = dayIllu(d);
-  const flow = d.leg.flow.map((f,i)=>`<span class="node">${esc(f)}</span>`+(i<d.leg.flow.length-1?`<span class="arr">→</span>`:``)).join("");
-  const spots = d.spots.map(sp=>`<div class="spot" style="--seg:${c}">
-      <div class="sh"><span class="sn">${sp.i}</span><div><h4>${esc(sp.name)} <span class="sen">${esc(sp.en)}</span></h4></div></div>
-      <p>${esc(sp.desc)}</p>
-      <div class="tags">${sp.tags.map(t=>`<span class="tag" style="--seg:${c}">${esc(t)}</span>`).join("")}</div>
-    </div>`).join("");
+  // ---- install prompt ----
+  var deferred=null, bar=document.getElementById('install');
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault(); deferred=e;
+    try{if(localStorage.getItem('stubai.noinstall'))return}catch(_){}
+    bar.classList.add('show');
+  });
+  document.getElementById('doInstall').addEventListener('click',function(){
+    bar.classList.remove('show'); if(deferred){deferred.prompt(); deferred=null;}
+  });
+  document.getElementById('dismiss').addEventListener('click',function(){
+    bar.classList.remove('show'); try{localStorage.setItem('stubai.noinstall','1')}catch(e){}
+  });
 
-  const aboutBlock = p&&p.about?`<div class="block" style="--seg:${c}"><div class="block-title"><span class="em">📖</span>認識這個地方</div><div class="prose">${esc(p.about)}</div></div>`:``;
-  const histBlock = p&&p.history?`<div class="block" style="--seg:${c}"><div class="block-title"><span class="em">🏛</span>歷史沿革</div><div class="prose">${esc(p.history)}</div></div>`:``;
-
-  let eatBlock=``;
-  if(p&&p.food){ const g=foodById(p.food);
-    if(g){ eatBlock=`<div class="block" style="--seg:${c}"><div class="block-title"><span class="em">${g.em}</span>當地美食 · ${esc(g.group.split("·")[0].trim())}</div>
-      ${g.items.map(it=>`<div class="eat-row"><span class="edot">🍽</span><div><div><span class="en2">${esc(it.n)}</span><span class="een">${esc(it.en)}</span></div><div class="ed">${esc(it.d)}</div></div></div>`).join("")}</div>`; }
+  // ---- service worker ----
+  if('serviceWorker' in navigator){
+    window.addEventListener('load',function(){
+      navigator.serviceWorker.register('./sw.js').catch(function(){});
+    });
   }
-
-  const quizBlock = p&&p.quiz?`<div class="quiz">
-      <div class="qh">🧩 趣味猜謎 · Fun Fact</div>
-      <div class="qq">${esc(p.quiz.q)}</div>
-      <details><summary>看答案 ▾</summary><div class="qa">${esc(p.quiz.a)}</div></details>
-    </div>`:``;
-
-  let hotelBlock;
-  if(d.hotel!=null){ const h=HOTELS[d.hotel];
-    hotelBlock=`<div class="hotel-block">
-      <div class="hb-top"><div class="hb-ic">🏨</div><div><div class="hb-city">${esc(h.city)}</div><div class="hb-name">${esc(h.name)}</div></div></div>
-      <div class="hb-area">${esc(h.area)}</div>
-      <div class="hb-note">${esc(h.date)} · ${esc(h.nights)}</div>
-      <a class="hb-map" href="${mapsUrl(h.q)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>在地圖開啟</a>
-    </div>`;
-  } else {
-    hotelBlock=`<div class="hotel-block"><div class="hb-top"><div class="hb-ic">✈️</div><div><div class="hb-city">Farewell</div><div class="hb-name">返抵台北</div></div></div><div class="hb-note">帶著五座纜車、三國湖光的金色記憶回家</div></div>`;
-  }
-
-  const tips = d.tips.map(t=>`<div class="tip">${esc(t)}</div>`).join("");
-  const prev = DAYS.find(x=>x.n===n-1), next = DAYS.find(x=>x.n===n+1);
-
-  const inner = `
-  <div class="detail-hero">
-    <div class="dh-illu">${il?ILLU[il]:''}</div>
-    <div class="dh-scrim"></div>
-    <a class="dh-back" href="#/days"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>逐日</a>
-    <div class="dh-content">
-      <div class="eyebrow">${esc(REGION[d.region].name)}</div>
-      <div class="dh-row"><h2>${esc(d.title)}</h2><div class="dh-date"><div class="dd">DAY ${d.n}</div><div class="wd">${esc(d.date)} · ${esc(d.wd)}</div></div></div>
-      <div class="dh-sub">${esc(d.sub)}</div>
-    </div>
-  </div>
-
-  <div class="block" style="--seg:${c}"><div class="block-title"><span class="em">🚆</span>今日交通 · ${esc(d.leg.mode)}</div>
-    <div class="flow">${flow}</div><div class="note-line">${esc(d.leg.note)}</div></div>
-
-  ${aboutBlock}
-  ${histBlock}
-
-  <div class="block" style="--seg:${c}"><div class="block-title"><span class="em">📍</span>今日重點</div>${spots}</div>
-
-  ${eatBlock}
-  ${quizBlock}
-  ${hotelBlock}
-
-  <div class="tips-block"><div class="block-title" style="--seg:${c};padding:0 2px">💡 小提醒</div>${tips}</div>
-
-  <div class="daynav">
-    <a class="${prev?'':'disabled'}" href="${prev?'#/day/'+prev.n:'#'}"><span>← 前一天</span>${prev?'DAY '+prev.n+' · '+esc(prev.date):'—'}</a>
-    <a class="${next?'':'disabled'}" href="${next?'#/day/'+next.n:'#'}"><span>後一天 →</span>${next?'DAY '+next.n+' · '+esc(next.date):'—'}</a>
-  </div>`;
-  mainEl.innerHTML = shell(inner);
-  $("#topTitle").innerHTML = `DAY ${d.n} · ${esc(d.date)}<small>${esc(REGION[d.region].name)}</small>`;
-}
-
-/* ---------- 住宿 ---------- */
-function renderStay(){
-  const items = HOTELS.map(h=>`<div class="hotel-item" style="--seg:${REGION[h.region].seg}">
-      <div class="hi-rail"></div>
-      <div class="hi-body">
-        <div style="display:flex;align-items:flex-start;gap:10px">
-          <div style="flex:1"><div class="hi-date">${esc(h.date)}</div><div class="hi-city">${esc(h.city)}</div><div class="hi-name">${esc(h.name)}</div>
-            <div class="hi-area">📍 ${esc(h.area)}</div>
-            <a class="hi-map" href="${mapsUrl(h.q)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>在地圖開啟</a>
-          </div>
-          <div class="hi-nights">${esc(h.nights)}</div>
-        </div>
-      </div></div>`).join("");
-  const inner = `<div class="page-title"><div class="en">Where you stay</div><h1>住宿一覽</h1><p>已訂 · 定點輻射，把搬行李次數壓到最低</p></div>
-    <div class="intro-note"><b>定點策略：</b>沃夫岡湖、采爾湖、Ortisei、維洛納各連住數晚；末段因斯布魯克六晚改住 Noas Bergisel，方便租車放射狀一日遊。采爾湖、Val Gardena 入住常附纜車／巴士客人卡。</div>
-    <div style="padding-bottom:30px">${items}</div>`;
-  mainEl.innerHTML = shell(inner);
-  $("#topTitle").innerHTML = `住宿一覽<small>9 段 · 19 晚</small>`;
-}
-
-/* ---------- 纜車 ---------- */
-function renderLifts(){
-  const items = LIFTS.map(l=>`<div class="card"><div class="card-h"><span class="num-badge">${l.n}</span><h3>${esc(l.name)}</h3><span class="alt">${esc(l.alt)}</span></div>
-      <div class="sub">${esc(l.en)}</div>
-      <div class="kv"><span><span class="k">登頂</span> <span class="v">${esc(l.how)}</span></span><span><span class="k">票價</span> <span class="v">${esc(l.price)}</span></span></div>
-      <p>${esc(l.note)}</p></div>`).join("");
-  const extra = LIFTS_EXTRA.map(l=>`<div class="card"><div class="card-h"><h3>${esc(l.name)}</h3><span class="alt">${esc(l.alt)}</span></div><p>${esc(l.note)}</p></div>`).join("");
-  const inner = `<div class="page-title"><div class="en">Five summit lifts</div><h1>五座登頂纜車</h1><p>免爬登頂 · 最高 3029m · 全程搭車</p></div>
-    <div class="intro-note">各段票價／時間為概估，請以官網即時資訊為準；<b>通票多不含纜車</b>，須當地或官網另購、預約時段。山頂常比平地低 15–20°C，防風保暖層必備。</div>
-    ${items}
-    <div class="sec"><div class="sec-head"><h2>多洛米蒂纜車</h2><span class="en">Included</span></div></div>
-    ${extra}<div style="height:24px"></div>`;
-  mainEl.innerHTML = shell(inner);
-  $("#topTitle").innerHTML = `纜車制高點<small>5 座登頂</small>`;
-}
-
-/* ---------- 美食 ---------- */
-function renderFood(){
-  const groups = FOOD.map(g=>`<div class="food-group"><div class="fg-head"><span class="fg-em">${g.em}</span>${esc(g.group)}</div>
-      ${g.items.map(it=>`<div class="food-item"><div class="fn">${esc(it.n)}<span class="fen">${esc(it.en)}</span></div><div class="fd">${esc(it.d)}</div></div>`).join("")}</div>`).join("");
-  const inner = `<div class="page-title"><div class="en">Taste along the route</div><h1>沿線當地美食</h1><p>巴伐利亞 · 提洛 · 南提洛 · 維洛納</p></div>
-    <div class="intro-note">山屋與湖畔餐廳旺季務必先訂位；提洛與南提洛的份量偏大，可分食。義大利老城多有 ZTL 管制，徒步用餐最方便。</div>
-    ${groups}<div style="height:24px"></div>`;
-  mainEl.innerHTML = shell(inner);
-  $("#topTitle").innerHTML = `沿線美食<small>吃什麼</small>`;
-}
-
-/* ---------- 火車票券 ---------- */
-function renderRail(){
-  const rows = RAIL.map(r=>`<div class="card"><div class="card-h"><h3 style="font-size:14px">${esc(r.leg)}</h3></div>
-      <div class="kv"><span><span class="k">官網</span> <span class="v">${esc(r.site)}</span></span><span><span class="k">票種</span> <span class="v">${esc(r.type)}</span></span></div><p>${esc(r.note)}</p></div>`).join("");
-  const tips = RAIL_TIPS.map(t=>`<div class="card"><div class="card-h"><h3 style="font-size:14.5px">💡 ${esc(t.t)}</h3></div><p>${esc(t.d)}</p></div>`).join("");
-  const inner = `<div class="page-title"><div class="en">Best value for 6</div><h1>火車票券怎麼買</h1><p>跨境長途買早鳥點對點票，比 Eurail 通票更省</p></div>
-    <div class="intro-note"><b>結論：</b>跨境長途段買早鳥點對點票、纜車當地／官網預約、楚格峰用邦票。ÖBB / DB / Trenitalia 官網可一次訂 6 張同班並選相鄰座。</div>
-    ${rows}
-    <div class="sec"><div class="sec-head"><h2>省錢要點</h2><span class="en">Tips</span></div></div>
-    ${tips}
-    <div class="card" style="background:var(--navy);color:#f4f1e9;border-color:var(--navy-3)"><div class="card-h"><h3 style="color:#fff">✦ 行動順序</h3></div>
-      <p style="color:#cdd6e6">① 現在先訂跨境早鳥票 → ② 訂房問 guest card → ③ 出發前 1–2 週預約纜車時段 → ④ 楚格峰當天買邦票＋登頂票。</p></div>
-    <div style="height:24px"></div>`;
-  mainEl.innerHTML = shell(inner);
-  $("#topTitle").innerHTML = `火車票券<small>6 人最划算</small>`;
-}
-
-/* ---------- 資訊 ---------- */
-function renderInfo(){
-  const cards = INFO.map(i=>`<details class="info-card"><summary><span class="em">${i.em}</span>${esc(i.t)}<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></summary><div class="info-body">${esc(i.d)}</div></details>`).join("");
-  const phrases = PHRASES.map(p=>`<div class="phrase-row"><span class="lang">${esc(p.lang)}</span><span class="pz">${esc(p.z)}</span><span class="pf">${esc(p.f)}</span></div>`).join("");
-  const checks = CHECKLIST.map((c,i)=>{const done=!!checkState[i];return `<div class="check-item ${done?'done':''}" data-i="${i}"><input type="checkbox" id="ck${i}" ${done?'checked':''}><label for="ck${i}">${esc(c)}</label></div>`;}).join("");
-  const inner = `<div class="page-title"><div class="en">Good to know</div><h1>當地旅遊注意事項</h1><p>出發前讀一遍，旅途更從容</p></div>
-    ${contactCard()}
-    <div style="height:6px"></div>
-    <div class="emerg"><div class="num">112</div><div class="et"><strong>全歐通用緊急電話</strong>可英語通話，建議先存入手機。德奧義通用。</div></div>
-    ${cards}
-    <div class="sec"><div class="sec-head"><h2>實用招呼語</h2><span class="en">Phrases</span></div></div>
-    <div class="card phrases">${phrases}</div>
-    <div class="sec"><div class="sec-head"><h2>打包清單</h2><span class="en">Packing · 可勾選</span></div></div>
-    <div id="checklist" style="padding-bottom:6px">${checks}</div>
-    <div class="footer-note">樂齡節奏：纜車優先搭早場、午後保留休息。行程已刻意放慢，量力而為最重要。</div><div style="height:20px"></div>`;
-  mainEl.innerHTML = shell(inner);
-  bindCopy(mainEl);
-  $("#topTitle").innerHTML = `旅遊資訊<small>Good to know</small>`;
-  $("#checklist").addEventListener("change", e=>{
-    if(e.target.matches("input[type=checkbox]")){ const row=e.target.closest(".check-item"); const i=row.dataset.i;
-      checkState[i]=e.target.checked; row.classList.toggle("done",e.target.checked); saveCheck(); }
-  });
-}
-
-/* =========================================================
-   搜尋（含歷史、美食、猜謎）
-   ========================================================= */
-function buildIndex(){
-  const idx=[];
-  DAYS.forEach(d=>{
-    const p=d.place?PLACES[d.place]:null;
-    idx.push({group:"逐日行程",title:`DAY ${d.n} · ${d.title}`,desc:`${d.date}（${d.wd}）· ${d.leg.from} → ${d.leg.to}`,hash:`#/day/${d.n}`,
-      hay:`day${d.n} ${d.title} ${d.sub} ${d.leg.from} ${d.leg.to} ${d.leg.mode} ${d.date} ${p?p.about+" "+p.history:""}`});
-    d.spots.forEach(sp=>idx.push({group:"景點 · 制高點",title:sp.name,desc:`${sp.en} · DAY ${d.n}`,hash:`#/day/${d.n}`,hay:`${sp.name} ${sp.en} ${sp.desc} ${sp.tags.join(" ")}`}));
-    if(p&&p.quiz) idx.push({group:"趣味猜謎",title:`DAY ${d.n} 猜謎`,desc:p.quiz.q,hash:`#/day/${d.n}`,hay:`${p.quiz.q} ${p.quiz.a}`});
-    if(d.hotel!=null){const h=HOTELS[d.hotel];idx.push({group:"住宿",title:h.name,desc:`${h.city} · ${h.area}`,hash:`#/day/${d.n}`,hay:`${h.name} ${h.city} ${h.area}`});}
-  });
-  LIFTS.forEach(l=>idx.push({group:"纜車",title:`${l.name} · ${l.alt}`,desc:`${l.en} · ${l.price}`,hash:`#/lifts`,hay:`${l.name} ${l.en} ${l.how} ${l.note} ${l.alt}`}));
-  LIFTS_EXTRA.forEach(l=>idx.push({group:"纜車",title:`${l.name} · ${l.alt}`,desc:l.note,hash:`#/lifts`,hay:`${l.name} ${l.note}`}));
-  FOOD.forEach(g=>g.items.forEach(it=>idx.push({group:"美食",title:it.n,desc:`${it.en} · ${g.group}`,hash:`#/food`,hay:`${it.n} ${it.en} ${it.d} ${g.group}`})));
-  RAIL.forEach(r=>idx.push({group:"火車票券",title:r.leg,desc:`${r.site} · ${r.type}`,hash:`#/rail`,hay:`${r.leg} ${r.site} ${r.type} ${r.note}`}));
-  INFO.forEach(i=>idx.push({group:"注意事項",title:i.t,desc:i.d.slice(0,40),hash:`#/info`,hay:`${i.t} ${i.d}`}));
-  return idx;
-}
-const SEARCH_INDEX = buildIndex();
-function highlight(text,q){ if(!q) return esc(text); const i=text.toLowerCase().indexOf(q.toLowerCase());
-  if(i<0) return esc(text); return esc(text.slice(0,i))+"<mark>"+esc(text.slice(i,i+q.length))+"</mark>"+esc(text.slice(i+q.length)); }
-function doSearch(q){
-  const res=$("#searchResults"); q=q.trim();
-  if(!q){ res.innerHTML=`<div class="sr-hint">搜尋地點、歷史、美食、旅館或猜謎<div class="sr-chips">
-      ${["黃金屋頂","Seceda","基茨峰","冰人 Ötzi","炸牛排","茱麗葉","客人卡","112"].map(k=>`<button data-k="${k}">${k}</button>`).join("")}</div></div>`;
-    res.querySelectorAll("button[data-k]").forEach(b=>b.onclick=()=>{ $("#searchInput").value=b.dataset.k; doSearch(b.dataset.k); $("#searchInput").focus(); }); return; }
-  const ql=q.toLowerCase();
-  const hits=SEARCH_INDEX.filter(x=>x.hay.toLowerCase().includes(ql));
-  if(!hits.length){ res.innerHTML=`<div class="sr-empty">找不到「${esc(q)}」<br><span style="font-size:12px">試試地名、旅館名或纜車名稱</span></div>`; return; }
-  const groups={}; hits.forEach(h=>{(groups[h.group]=groups[h.group]||[]).push(h);});
-  res.innerHTML=Object.keys(groups).map(g=>`<div class="sr-group">${g}</div>
-    ${groups[g].map(h=>`<a class="sr-item" href="${h.hash}" data-close="1"><div class="srt">${highlight(h.title,q)}</div><div class="srd">${highlight(h.desc,q)}</div></a>`).join("")}`).join("");
-  res.querySelectorAll("a[data-close]").forEach(a=>a.addEventListener("click",closeSearch));
-}
-function openSearch(){ $("#searchOverlay").classList.add("active"); $("#searchInput").value=""; doSearch(""); setTimeout(()=>$("#searchInput").focus(),50); }
-function closeSearch(){ $("#searchOverlay").classList.remove("active"); }
-$("#searchBtn").onclick=openSearch;
-$("#searchCancel").onclick=closeSearch;
-$("#searchInput").addEventListener("input",e=>doSearch(e.target.value));
-$("#searchInput").addEventListener("keydown",e=>{ if(e.key==="Escape") closeSearch(); });
-
-/* =========================================================
-   啟動 + Service Worker
-   ========================================================= */
-route();
-if("serviceWorker" in navigator){ window.addEventListener("load",()=>{ navigator.serviceWorker.register("./sw.js").catch(()=>{}); }); }
+})();
 </script>
 </body>
 </html>
