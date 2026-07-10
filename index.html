@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stubai × Dresdner Hütte · 山屋週末</title>
+<meta name="description" content="斯圖拜冰川週末手冊 · 2026/07/11–12 · Innsbruck 出發 · 上坡用走、下坡搭纜車 · 2 人一泊二食">
+<meta name="theme-color" content="#0C1922">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" href="./favicon-64.png" sizes="64x64">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Stubai">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C1922; --ink-2:#12222E; --ink-3:#17293605; --card:#152632;
+    --frost:#E9F1F4; --mist:#8FA5B0; --faint:#5E7482;
+    --glacier:#63B6D6; --glacier-dim:#3E7C93;
+    --alpenglow:#E3A24F; --pine:#5D9B78;
+    --line:#253A47; --line-2:#1D2E3A;
+    --serif:"Fraunces",Georgia,"Songti TC",serif;
+    --grot:"Space Grotesk",ui-monospace,"PingFang TC",sans-serif;
+    --cjk:"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--ink);color:var(--frost);
+    font-family:var(--cjk);line-height:1.62;
+    letter-spacing:.01em;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    overflow-x:hidden;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 20px}
+  ::selection{background:var(--glacier);color:var(--ink)}
+
+  /* ---------- eyebrow / labels ---------- */
+  .eyebrow{font-family:var(--grot);font-size:11px;font-weight:600;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--glacier);}
+  .num{font-family:var(--grot);font-variant-numeric:tabular-nums;}
+
+  /* ---------- hero ---------- */
+  header.hero{padding:52px 0 26px;position:relative}
+  .hero .kicker{color:var(--faint);letter-spacing:.3em}
+  .hero h1{font-family:var(--serif);font-weight:500;
+    font-size:clamp(34px,10vw,52px);line-height:1.02;margin:16px 0 6px;
+    letter-spacing:-.01em;}
+  .hero h1 .zh{display:block;font-size:clamp(24px,7vw,34px);color:var(--frost);margin-top:4px;letter-spacing:.02em}
+  .hero .dek{color:var(--mist);font-size:15px;max-width:34ch;margin-top:14px}
+  .hero .dates{font-family:var(--grot);font-weight:600;color:var(--alpenglow);
+    letter-spacing:.04em;margin-top:18px;font-size:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .hero .dates .live{display:inline-flex;align-items:center;gap:7px;color:var(--glacier);
+    border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--glacier);
+    box-shadow:0 0 0 0 var(--glacier);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(99,182,214,.5)}70%{box-shadow:0 0 0 7px rgba(99,182,214,0)}100%{box-shadow:0 0 0 0 rgba(99,182,214,0)}}
+
+  /* ---------- elevation profile (signature) ---------- */
+  .profile{margin:30px 0 8px;position:relative}
+  .profile svg{width:100%;height:auto;display:block;overflow:visible}
+  .profile .cap{display:flex;justify-content:space-between;font-family:var(--grot);
+    font-size:10.5px;color:var(--faint);letter-spacing:.14em;text-transform:uppercase;margin-top:10px}
+  .path-line{fill:none;stroke:var(--glacier);stroke-width:2.4;
+    stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.2s .3s ease forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .path-return{fill:none;stroke:var(--glacier-dim);stroke-width:2;stroke-linecap:round;
+    stroke-dasharray:5 8;opacity:0;animation:appear .8s 1.9s ease forwards}
+  @keyframes appear{to{opacity:.85}}
+  .path-fill{fill:url(#grad);opacity:.14}
+  .node circle{fill:var(--ink);stroke:var(--glacier);stroke-width:2}
+  .node.summit circle{stroke:var(--alpenglow)}
+  .node text{font-family:var(--grot);font-size:9.5px;fill:var(--mist);font-weight:500}
+  .node .alt{fill:var(--frost);font-weight:600}
+
+  /* ---------- stat strip ---------- */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line-2);border:1px solid var(--line-2);border-radius:14px;
+    overflow:hidden;margin:22px 0 8px}
+  .stats div{background:var(--ink-2);padding:14px 12px}
+  .stats .k{font-family:var(--grot);font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint)}
+  .stats .v{font-family:var(--serif);font-size:19px;margin-top:3px;color:var(--frost)}
+  .stats .v small{font-family:var(--cjk);font-size:12px;color:var(--mist)}
+
+  /* ---------- day tabs (sticky) ---------- */
+  .tabs{position:sticky;top:0;z-index:20;display:flex;gap:8px;
+    padding:12px 0;margin-top:18px;
+    background:linear-gradient(var(--ink) 72%,transparent);
+    -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+  .tab{flex:1;font-family:var(--grot);font-weight:600;font-size:13px;
+    letter-spacing:.06em;padding:11px 8px;border-radius:11px;border:1px solid var(--line);
+    background:var(--ink-2);color:var(--mist);cursor:pointer;text-align:center;
+    transition:.22s;-webkit-tap-highlight-color:transparent}
+  .tab .d{display:block;font-size:10px;letter-spacing:.2em;color:var(--faint);text-transform:uppercase;margin-bottom:2px}
+  .tab.on{color:var(--ink);background:var(--glacier);border-color:var(--glacier)}
+  .tab.on .d{color:rgba(12,25,34,.6)}
+
+  /* ---------- section heads ---------- */
+  section{padding:26px 0;border-top:1px solid var(--line-2)}
+  section:first-of-type{border-top:none}
+  .shead{display:flex;align-items:baseline;gap:12px;margin-bottom:20px}
+  .shead .no{font-family:var(--grot);font-size:12px;color:var(--glacier);font-weight:600}
+  .shead h2{font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:.01em}
+
+  /* ---------- timeline ---------- */
+  .day{display:none}
+  .day.on{display:block;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .tl{position:relative;margin-left:6px;padding-left:26px}
+  .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;
+    background:linear-gradient(var(--glacier),var(--glacier-dim) 60%,var(--line))}
+  .stop{position:relative;padding:0 0 22px}
+  .stop::before{content:"";position:absolute;left:-25px;top:5px;width:12px;height:12px;
+    border-radius:50%;background:var(--ink);border:2px solid var(--glacier)}
+  .stop.walk::before{border-color:var(--pine);background:var(--ink)}
+  .stop.summit::before{border-color:var(--alpenglow);
+    box-shadow:0 0 0 4px rgba(227,162,79,.14)}
+  .stop.lake::before{background:var(--glacier);border-color:var(--glacier)}
+  .stop .t{font-family:var(--grot);font-weight:600;font-size:13px;color:var(--glacier);
+    font-variant-numeric:tabular-nums;letter-spacing:.03em}
+  .stop.summit .t{color:var(--alpenglow)}
+  .stop h4{font-size:15.5px;font-weight:600;margin:2px 0 3px;letter-spacing:.01em}
+  .stop p{color:var(--mist);font-size:13.5px}
+  .stop .tag{display:inline-block;font-family:var(--grot);font-size:10.5px;
+    letter-spacing:.05em;color:var(--faint);border:1px solid var(--line);
+    border-radius:6px;padding:2px 8px;margin:8px 6px 0 0}
+  .stop .tag.walk{color:var(--pine);border-color:#2f4a3d}
+  .stop .tag.hot{color:var(--alpenglow);border-color:#4a3c26}
+  .stop .nav{display:inline-block;font-family:var(--grot);font-size:11.5px;font-weight:600;
+    letter-spacing:.03em;color:var(--glacier);text-decoration:none;margin-top:9px;
+    border:1px solid var(--line);border-radius:8px;padding:5px 11px;-webkit-tap-highlight-color:transparent}
+  .stop .nav:active{background:var(--ink-2)}
+  .stop.start::before{background:var(--glacier);border-color:var(--glacier)}
+
+  .note{background:var(--ink-2);border:1px solid var(--line-2);border-left:2px solid var(--alpenglow);
+    border-radius:10px;padding:13px 15px;margin:6px 0 2px;font-size:13px;color:var(--mist)}
+  .note b{color:var(--frost);font-weight:600}
+
+  /* ---------- loop diagram ---------- */
+  .loop{background:var(--ink-2);border:1px solid var(--line-2);border-radius:14px;
+    padding:18px 16px;margin:4px 0 18px}
+  .loop .lh{font-family:var(--grot);font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--faint);margin-bottom:12px}
+  .loop ol{list-style:none;display:flex;flex-direction:column;gap:0}
+  .loop li{display:flex;gap:12px;align-items:flex-start;position:relative;padding-bottom:14px}
+  .loop li:not(:last-child)::before{content:"";position:absolute;left:8px;top:20px;bottom:0;width:1.5px;
+    background:var(--line);border-radius:2px}
+  .loop li:not(:last-child).dn::before{background:repeating-linear-gradient(var(--glacier) 0 3px,transparent 3px 7px)}
+  .loop .pt{flex:0 0 17px;height:17px;border-radius:50%;border:2px solid var(--glacier);
+    background:var(--ink);margin-top:1px}
+  .loop li.up .pt{border-color:var(--pine)}
+  .loop li.peak .pt{border-color:var(--glacier);background:var(--glacier)}
+  .loop li.dn .pt{border-color:var(--glacier-dim)}
+  .loop .lb{font-size:13.5px}
+  .loop .lb b{font-weight:600}
+  .loop .lb span{font-family:var(--grot);font-size:11px;color:var(--faint);margin-left:2px}
+
+  /* ---------- generic cards / rows ---------- */
+  .rows{border:1px solid var(--line-2);border-radius:14px;overflow:hidden}
+  .row{display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:13px 15px;background:var(--ink-2);border-top:1px solid var(--line-2);font-size:14px}
+  .row:first-child{border-top:none}
+  .row .lab{color:var(--mist)}
+  .row .lab b{color:var(--frost);font-weight:600;display:block;font-size:14.5px}
+  .row .lab small{color:var(--faint);font-size:12px}
+  .row .val{font-family:var(--grot);font-weight:600;font-variant-numeric:tabular-nums;
+    color:var(--frost);white-space:nowrap;font-size:14px}
+  .row .val.hi{color:var(--glacier)}
+
+  .costcard{background:var(--ink-2);border:1px solid var(--line-2);border-radius:14px;padding:4px 0;margin-top:4px}
+  .costcard .r{display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid var(--line-2);align-items:baseline}
+  .costcard .r:first-child{border-top:none}
+  .costcard .r .who{font-size:13.5px;color:var(--mist)}
+  .costcard .r .who b{color:var(--frost);display:block;font-weight:600}
+  .costcard .r .amt{font-family:var(--grot);font-weight:700;font-size:17px;color:var(--frost)}
+  .costcard .r .amt small{display:block;text-align:right;font-size:11px;color:var(--faint);font-weight:500}
+  .costcard .r.best .amt{color:var(--pine)}
+
+  /* ---------- checklist ---------- */
+  .check li{list-style:none;display:flex;gap:12px;align-items:center;padding:11px 2px;
+    border-top:1px solid var(--line-2);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .check li:first-child{border-top:none}
+  .check .box{flex:0 0 20px;height:20px;border-radius:6px;border:1.6px solid var(--faint);
+    display:grid;place-items:center;transition:.18s}
+  .check .box svg{width:12px;height:12px;opacity:0;transform:scale(.5);transition:.18s}
+  .check li.done .box{background:var(--glacier);border-color:var(--glacier)}
+  .check li.done .box svg{opacity:1;transform:none}
+  .check li.done .txt{color:var(--faint);text-decoration:line-through}
+  .check .txt{font-size:14px}
+  .check .txt small{color:var(--faint);font-size:12px;margin-left:6px}
+
+  /* ---------- links / buttons ---------- */
+  a.btn{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    background:var(--ink-2);border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;color:var(--frost);text-decoration:none;font-size:14px;
+    margin-top:9px;transition:.2s}
+  a.btn:active{background:var(--card)}
+  a.btn .arrow{color:var(--glacier);font-family:var(--grot)}
+  a.btn small{display:block;color:var(--faint);font-size:12px;margin-top:2px}
+
+  .de{font-family:var(--grot);color:var(--glacier)}
+  footer{padding:40px 0 60px;text-align:center;color:var(--faint);font-size:12.5px;line-height:1.9}
+  footer .g{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--mist);margin-bottom:10px;display:block}
+
+  /* install toast */
+  #install{position:fixed;left:16px;right:16px;bottom:16px;max-width:608px;margin:0 auto;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;
+    display:none;align-items:center;gap:12px;z-index:50;
+    box-shadow:0 12px 40px rgba(0,0,0,.5)}
+  #install.show{display:flex}
+  #install .ic{flex:0 0 34px}
+  #install .tx{flex:1;font-size:13px}
+  #install .tx b{display:block}
+  #install button{font-family:var(--grot);font-weight:600;font-size:13px;border:none;
+    background:var(--glacier);color:var(--ink);border-radius:9px;padding:9px 13px;cursor:pointer}
+  #install .x{background:none;color:var(--faint);padding:8px}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .path-line{stroke-dashoffset:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow kicker">Stubai Glacier · Innsbruck Base · 2026</div>
+    <h1>Dresdner Hütte<span class="zh">斯圖拜冰川 · 山屋週末</span></h1>
+    <p class="dek">上坡用走、下坡搭纜車。週六登頂 TOP OF TYROL,週日環線走 Egesensee → Mutterberger See,主要陡降全交給纜車。</p>
+    <div class="dates">
+      2026/07/11 SAT – 07/12 SUN
+      <span class="live"><span class="dot"></span>本週末 · 2 人</span>
+    </div>
+
+    <!-- elevation profile signature -->
+    <div class="profile">
+      <svg viewBox="0 0 600 200" role="img" aria-label="海拔剖面 1750 到 3165 公尺">
+        <defs>
+          <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#63B6D6"/>
+            <stop offset="1" stop-color="#63B6D6" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- profile: valley 1750 -> Fernau 2308 -> Eisgrat 2900 -> Top 3165 -> back -->
+        <path class="path-fill" d="M20,175 L20,150 L165,120 L310,70 L455,30 L455,175 Z"/>
+        <path class="path-line" d="M20,150 L165,120 L310,70 L455,30"/>
+        <path class="path-return" d="M455,30 L580,150"/>
+        <g class="node"><circle cx="20" cy="150" r="4.5"/><text x="20" y="192" text-anchor="middle">MUTTERBERG</text><text class="alt" x="20" y="140" text-anchor="middle">1750</text></g>
+        <g class="node"><circle cx="165" cy="120" r="4.5"/><text x="165" y="192" text-anchor="middle">FERNAU · 山屋</text><text class="alt" x="165" y="110" text-anchor="middle">2308</text></g>
+        <g class="node"><circle cx="310" cy="70" r="4.5"/><text x="310" y="192" text-anchor="middle">EISGRAT</text><text class="alt" x="310" y="60" text-anchor="middle">2900</text></g>
+        <g class="node summit"><circle cx="455" cy="30" r="5.5"/><text x="455" y="192" text-anchor="middle">TOP OF TYROL</text><text class="alt" x="455" y="20" text-anchor="middle" style="fill:var(--alpenglow)">3165</text></g>
+      </svg>
+      <div class="cap"><span>◀ 上坡步行</span><span>纜車 ⇅</span><span>纜車下山 ▶</span></div>
+    </div>
+
+    <div class="stats">
+      <div><div class="k">天數</div><div class="v">2<small> 天 1 晚</small></div></div>
+      <div><div class="k">最高海拔</div><div class="v">3165<small> m</small></div></div>
+      <div><div class="k">住宿</div><div class="v" style="font-size:15px">Cat A<small> 雙人房</small></div></div>
+    </div>
+  </header>
+
+  <!-- DAY TABS -->
+  <nav class="tabs">
+    <button class="tab on" data-day="1"><span class="d">Sat · 07/11</span>Day 1 · 上山登頂</button>
+    <button class="tab" data-day="2"><span class="d">Sun · 07/12</span>Day 2 · 環線下山</button>
+  </nav>
+
+  <!-- ===================== DAY 1 ===================== -->
+  <div class="day on" id="day1">
+    <section>
+      <div class="shead"><span class="no">01</span><h2>上山 · 上坡健行 · 登頂</h2></div>
+      <div class="note"><b>睡晚版:</b>出發從 08:35 延到 09:35。代價是午後山頂較易起雲,登頂視野可能打折。若上到 Eisgrat 見山頂雲厚,可在 2,900 m 平台等雲隙或當日略過,不勉強強登。</div>
+      <div class="tl" style="margin-top:18px">
+        <div class="stop start"><div class="t">08:45</div><h4>家 · Luigenstraße 24 → Innsbruck Hbf</h4><p>電車 / 巴士約 12–15 分,或步行 ~3 km(東南側)。最遲 09:28 到 Steig B。想更寬鬆可改搭 09:05 → 10:21 的 590。</p><a class="nav" href="https://www.google.com/maps/dir/?api=1&amp;origin=Luigenstra%C3%9Fe+24%2C+6020+Innsbruck&amp;destination=Innsbruck+Hauptbahnhof&amp;travelmode=transit" target="_blank" rel="noopener">開導航 →</a><span class="tag">出門</span></div>
+        <div class="stop"><div class="t">09:35</div><h4>Innsbruck Hbf → Mutterberg</h4><p>Steig B 搭 590a,車程約 75 分,不需轉車。</p><span class="tag">590a</span><span class="tag">75 min</span></div>
+        <div class="stop"><div class="t">10:51</div><h4>抵 Mutterberg 谷站 · 1,750 m</h4><p>購 TOP OF TYROL Ticket(€40.70,涵蓋上山 + 登頂),整裝。</p><span class="tag">購票</span></div>
+        <div class="stop"><div class="t">11:15</div><h4>纜車上 Fernau · 2,308 m</h4><p>Dresdner Hütte 放行李、咖啡、稍作高度適應。山屋就在中站旁,步行約 5 分鐘。</p><span class="tag">纜車</span></div>
+        <div class="stop walk"><div class="t">11:45</div><h4>上坡健行 Fernau → Eisgrat</h4><p>冰河冰磧步道,爬升 600 m,實抓 2–2.5 h。純上坡以向心收縮為主,膝關節負荷低,全區風景最精華的一段。</p><span class="tag walk">唯一步行段</span><span class="tag walk">+600 m</span><span class="tag walk">護膝上坡</span></div>
+        <div class="stop"><div class="t">14:00</div><h4>抵 Eisgrat · 2,900 m 午餐</h4><p>山上餐廳補給,補水、放慢動作以利高度適應。</p><span class="tag">午餐</span></div>
+        <div class="stop summit"><div class="t">14:45</div><h4>纜車直上 TOP OF TYROL · 3,165 m</h4><p>360° 稜線群峰盡收;一旁 Schaufeljoch 小教堂,可於奧地利最高餐廳 Jochdohle(3,150 m)歇腳。動作放慢、注意保暖。</p><span class="tag hot">登頂</span><span class="tag hot">最高餐廳</span></div>
+        <div class="stop"><div class="t">16:00</div><h4>纜車全程下行回 Fernau</h4><p>膝關節負荷最大的陡降段完全交給纜車,不走下坡。</p><span class="tag">免下坡</span></div>
+        <div class="stop lake"><div class="t">傍晚</div><h4>Dresdner Hütte 晚餐 · 夕照 · 過夜</h4><p>三道式晚餐、高山夕照,過夜適應高度,隔日晨間更從容。</p><span class="tag">一泊二食</span></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== DAY 2 ===================== -->
+  <div class="day" id="day2">
+    <section>
+      <div class="shead"><span class="no">02</span><h2>晨間環線 · 纜車下山</h2></div>
+      <div class="note"><b>早退換到趕上 12:00 巴士:</b>7:00 早餐、7:40 退房寄行李、7:50 出發環線,約 11:00 回到山屋。走 Egesensee → Egesen Nieder → Mutterberger See,回程改走 Wilde Grube 碎石車道(Fahrweg)折返,不重爬 Egesen Nieder。558 m 主要陡降仍搭纜車。</div>
+
+      <div class="loop">
+        <div class="lh">環線 · 中等紅級山徑 · ~3–3.25 h · 需 Trittsicherheit</div>
+        <ol>
+          <li class="up"><span class="pt"></span><span class="lb"><b>Dresdner Hütte</b> <span>2,308 m · 起點</span></span></li>
+          <li class="up"><span class="pt"></span><span class="lb">Egesensee <span>2,500 m</span></span></li>
+          <li class="up"><span class="pt"></span><span class="lb">Egesen Nieder <span>2,506 m</span></span></li>
+          <li class="peak"><span class="pt"></span><span class="lb"><b>Mutterberger See</b> <span>2,483 m · 三峰倒映</span></span></li>
+          <li class="dn"><span class="pt"></span><span class="lb">Wilde Grube 碎石車道 <span>折返</span></span></li>
+          <li class="dn"><span class="pt"></span><span class="lb"><b>回 Dresdner Hütte</b> <span>取行李</span></span></li>
+        </ol>
+      </div>
+
+      <div class="tl">
+        <div class="stop"><div class="t">07:00</div><h4>山屋早餐</h4><p>半膳早餐。</p></div>
+        <div class="stop"><div class="t">07:40</div><h4>退房 · 行李寄放山屋</h4><p>房間 09:00 前需騰空;行李寄櫃檯,健行後回程再取。</p><span class="tag">寄行李</span></div>
+        <div class="stop walk"><div class="t">07:50</div><h4>環線出發 → Egesensee</h4><p>經退縮冰河地貌上行,去程約 4.8 km、+481 m 至湖區。</p><span class="tag walk">+481 m</span><span class="tag walk">4.8 km</span></div>
+        <div class="stop lake"><div class="t">09:50</div><h4>Mutterberger See · 2,483 m</h4><p>翡翠色冰斗湖,晴天可見 Wilder Freiger、Wilder Pfaff、Zuckerhütl 三峰倒映。休息、拍照、補水。</p><span class="tag">湖景高點</span></div>
+        <div class="stop"><div class="t">10:15</div><h4>回程 Wilde Grube 碎石車道</h4><p>緩坡車道折返,不重爬 Egesen Nieder,對膝關節友善。</p><span class="tag">緩降</span></div>
+        <div class="stop"><div class="t">11:00</div><h4>回 Dresdner Hütte · 取行李</h4><p>回到山屋、取行李,準備下山。</p></div>
+        <div class="stop"><div class="t">11:15</div><h4>纜車 Fernau → 谷站</h4><p>558 m 主要陡降搭纜車;週日僅需單段票(約 €10.70)。</p><span class="tag">免下坡</span></div>
+        <div class="stop"><div class="t">12:00</div><h4>Mutterberg 搭 590b 返程</h4><p>直達 Innsbruck Hbf,不需轉車。想更寬鬆可改 13:00 → 14:15。</p><span class="tag">590b</span></div>
+        <div class="stop summit"><div class="t">13:15</div><h4>抵 Innsbruck Hbf</h4><p>午後抵達,原路約 15 分回到 Luigenstraße;仍有半天可用。</p></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== TICKETS ===================== -->
+  <section>
+    <div class="shead"><span class="no">·</span><h2>票務 · 纜車與 590</h2></div>
+    <div class="rows">
+      <div class="row"><span class="lab"><b>週六 TOP OF TYROL Ticket</b><small>上山 + 登頂 + 回 Fernau</small></span><span class="val hi">€40.70</span></div>
+      <div class="row"><span class="lab"><b>週日 Fernau → 谷站</b><small>單段纜車</small></span><span class="val">≈ €10.70</span></div>
+      <div class="row"><span class="lab"><b>590 巴士</b><small>KlimaTicket Tirol 有效則免費</small></span><span class="val">2 人來回 ≈ €42</span></div>
+      <div class="row"><span class="lab"><b>纜車押金</b><small>每張可退</small></span><span class="val">€2</span></div>
+    </div>
+    <div class="note" style="border-left-color:var(--glacier)"><b>去程 590 班次(每 30 分一班):</b>09:05→10:21、09:35→10:51、10:05→11:21。<b style="color:var(--frost)">回程:</b>12:00→13:15、13:00→14:15、14:00→15:15。班表以 VVT App 當日為準。</div>
+  </section>
+
+  <!-- ===================== COST ===================== -->
+  <section>
+    <div class="shead"><span class="no">·</span><h2>費用 · 2 人總覽</h2></div>
+    <div class="costcard">
+      <div class="r best"><span class="who"><b>最省</b>AV 會員 + KlimaTicket 有效</span><span class="amt">≈ €299<small>每人 €150</small></span></div>
+      <div class="r"><span class="who"><b>一般</b>非會員 + KlimaTicket 有效</span><span class="amt">≈ €323<small>每人 €162</small></span></div>
+      <div class="r"><span class="who"><b>最高</b>非會員 + 無 KlimaTicket</span><span class="amt">≈ €365<small>每人 €182</small></span></div>
+    </div>
+    <div class="note">含山屋一泊二食(Cat A 雙人房 + A 類加價 + 觀光稅)、纜車、590、週六山上午餐。主要擺動因子:是否 AV 會員(2 人約差 €24)、KlimaTicket 是否有效(約差 €42)。</div>
+  </section>
+
+  <!-- ===================== HUT & TIPS ===================== -->
+  <section>
+    <div class="shead"><span class="no">·</span><h2>山屋 · 當地提醒</h2></div>
+    <div class="rows">
+      <div class="row"><span class="lab"><b>Dresdner Hütte · 2,308 m</b><small>DAV Sektion Dresden · Hofer 家族經營</small></span><span class="val"></span></div>
+      <div class="row"><span class="lab">房型</span><span class="val" style="white-space:normal;text-align:right">Cat A 含床單 · 免睡袋 · 不含毛巾</span></div>
+      <div class="row"><span class="lab">淋浴</span><span class="val">投幣 €1 / 約 3 分</span></div>
+      <div class="row"><span class="lab">付款</span><span class="val" style="white-space:normal;text-align:right">滿 €10 可刷卡 · 不收 AMEX</span></div>
+      <div class="row"><span class="lab">退房 / 末班上山</span><span class="val">09:00 前 / 16:15</span></div>
+    </div>
+    <div class="note" style="margin-top:14px"><b>高海拔:</b>山頂比平地低 15–20°C,防風保暖層必備,補水、放慢動作。<b style="color:var(--frost)"> 午後天氣:</b>高山午後易起雲雷雨,早上視野最好。<b style="color:var(--frost)"> 德語:</b>Grüß Gott · Danke · Prost。</div>
+    <a class="btn" href="tel:+4352268112"><span>致電山屋 <small>+43 5226 8112</small></span><span class="arrow">→</span></a>
+    <a class="btn" href="tel:140"><span>山難救助 <small>奧地利 140 · 全歐 112</small></span><span class="arrow">→</span></a>
+  </section>
+
+  <!-- ===================== BEFORE YOU GO ===================== -->
+  <section>
+    <div class="shead"><span class="no">·</span><h2>出發前一晚 · 必查</h2></div>
+    <p style="color:var(--mist);font-size:13.5px;margin-bottom:6px">確認 webcam 實際雲幕、步道開放狀態,以及當日巴士票價與班次。</p>
+    <a class="btn" href="https://www.stubaier-gletscher.com/en/stubai-live/weather/" target="_blank" rel="noopener"><span>官方天氣 · Webcam <small>GeoSphere Austria · 2,900 m 預報</small></span><span class="arrow">↗</span></a>
+    <a class="btn" href="https://www.ventusky.com/47;11.12" target="_blank" rel="noopener"><span>Ventusky <small>山區逐時風速與降水</small></span><span class="arrow">↗</span></a>
+    <a class="btn" href="https://www.vvt.at/" target="_blank" rel="noopener"><span>VVT App <small>590 當日班次與票價</small></span><span class="arrow">↗</span></a>
+  </section>
+
+  <!-- ===================== PACKING ===================== -->
+  <section>
+    <div class="shead"><span class="no">·</span><h2>行前清單</h2></div>
+    <ul class="check" id="pack"></ul>
+    <p style="color:var(--faint);font-size:12px;margin-top:12px">勾選狀態存在本機,可離線使用。</p>
+  </section>
+
+  <!-- ===================== HANDBOOK PDF ===================== -->
+  <section>
+    <div class="shead"><span class="no">·</span><h2>完整手冊 · PDF</h2></div>
+    <p style="color:var(--mist);font-size:13.5px;margin-bottom:6px">A4 列印版,7 頁,含封面海拔剖面、Day1/Day2 時刻表、環線圖、票務與費用、山屋資訊。</p>
+    <a class="btn" href="./stubai-handbook.pdf" target="_blank" rel="noopener" download="斯圖拜冰川_山屋週末手冊.pdf"><span>下載手冊 PDF <small>可離線開啟 · 適合列印</small></span><span class="arrow">↓</span></a>
+  </section>
+
+  <footer>
+    <span class="g">Gute Reise · Schöne Berge</span>
+    上坡用走 · 下坡搭纜車 · 平安上下山<br>
+    STUBAI WEEKEND · 2,308 M HUT · 3,165 M SUMMIT · 2026
+  </footer>
+
+</div>
+
+<div id="install">
+  <img class="ic" src="./icon-192.png" width="34" height="34" alt="">
+  <div class="tx"><b>安裝到主畫面</b><span style="color:var(--mist)">離線可用,像 App 一樣開啟</span></div>
+  <button id="doInstall">安裝</button>
+  <button class="x" id="dismiss">✕</button>
+</div>
+
+<script>
+(function(){
+  // ---- day tabs ----
+  var tabs=document.querySelectorAll('.tab'), days=document.querySelectorAll('.day');
+  function show(n){
+    tabs.forEach(function(t){t.classList.toggle('on',t.dataset.day===n)});
+    days.forEach(function(d){d.classList.toggle('on',d.id==='day'+n)});
+    try{localStorage.setItem('stubai.day',n)}catch(e){}
+    window.scrollTo({top:document.querySelector('.tabs').offsetTop-4,behavior:'smooth'});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.day)})});
+  try{var d=localStorage.getItem('stubai.day'); if(d==='2')show('2');}catch(e){}
+
+  // ---- packing checklist ----
+  var items=[
+    ['防風保暖層','山頂低 15–20°C'],['穩固登山鞋','紅級山徑'],['雨具 / 硬殼',''],
+    ['太陽眼鏡 + 防曬','冰河反光強'],['毛巾','山屋不提供'],['水 1–1.5 L / 人',''],
+    ['現金 + 卡','不收 AMEX'],['€1 硬幣','淋浴 / 押金'],['行動電源',''],
+    ['KlimaTicket / 車票',''],['手機存 140 / 112','山難救助'],['登頂票 QR / 購票',''],
+  ];
+  var ul=document.getElementById('pack'), saved={};
+  try{saved=JSON.parse(localStorage.getItem('stubai.pack')||'{}')}catch(e){}
+  items.forEach(function(it,i){
+    var li=document.createElement('li');
+    if(saved[i])li.className='done';
+    li.innerHTML='<span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#0C1922" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><span class="txt">'+it[0]+(it[1]?'<small>'+it[1]+'</small>':'')+'</span>';
+    li.addEventListener('click',function(){
+      li.classList.toggle('done');
+      saved[i]=li.classList.contains('done');
+      try{localStorage.setItem('stubai.pack',JSON.stringify(saved))}catch(e){}
+    });
+    ul.appendChild(li);
+  });
+
+  // ---- install prompt ----
+  var deferred=null, bar=document.getElementById('install');
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault(); deferred=e;
+    try{if(localStorage.getItem('stubai.noinstall'))return}catch(_){}
+    bar.classList.add('show');
+  });
+  document.getElementById('doInstall').addEventListener('click',function(){
+    bar.classList.remove('show'); if(deferred){deferred.prompt(); deferred=null;}
+  });
+  document.getElementById('dismiss').addEventListener('click',function(){
+    bar.classList.remove('show'); try{localStorage.setItem('stubai.noinstall','1')}catch(e){}
+  });
+
+  // ---- service worker ----
+  if('serviceWorker' in navigator){
+    window.addEventListener('load',function(){
+      navigator.serviceWorker.register('./sw.js').catch(function(){});
+    });
+  }
+})();
+</script>
+</body>
+</html>
