@@ -1,17 +1,19 @@
 {
-  "name": "Stubai × Dresdner Hütte · 山屋週末",
-  "short_name": "Stubai",
-  "description": "斯圖拜冰川週末手冊 · 2026/07/11–12 · 上坡用走、下坡搭纜車",
-  "lang": "zh-Hant",
+  "name": "阿爾卑斯湖光山色 · 21日手冊",
+  "short_name": "阿爾卑斯手冊",
+  "description": "維洛納 × 因斯布魯克 21 日隨身嚮導，離線可用",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#0C1922",
-  "theme_color": "#0C1922",
+  "background_color": "#14203a",
+  "theme_color": "#14203a",
+  "lang": "zh-Hant",
+  "dir": "ltr",
+  "categories": ["travel", "lifestyle"],
   "icons": [
     { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "./icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    { "src": "./icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }
